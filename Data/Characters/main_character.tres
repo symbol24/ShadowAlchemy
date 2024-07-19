@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://cjwfhv4acdubq"]
+
+[ext_resource type="Script" path="res://Code/Character/main_character_data.gd" id="1_qsa4m"]
+
+[resource]
+script = ExtResource("1_qsa4m")
+throw_strength = 300.0
+throw_delay = 1.0
+id = "main"
+speed = 100.0
+jump_height = 100.0
+jump_count = 1
+acceleration = 700
+friction = 1100
+air_multiplier = 0.6
+base_hp = 100.0
+starting_life_count = 1
+light_armor = 1.0
+dark_armor = 1.0

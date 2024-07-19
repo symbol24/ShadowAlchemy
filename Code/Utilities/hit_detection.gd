@@ -1,0 +1,1 @@
+class_name HitDetection extends Area2D

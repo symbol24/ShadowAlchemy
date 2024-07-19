@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkgyvccw8nmrr"]
+
+[ext_resource type="Script" path="res://Code/Actions/throw_potion.gd" id="1_fgnvp"]
+[ext_resource type="PackedScene" uid="uid://brt5paxjgbof" path="res://Scenes/Potions/test_potion.tscn" id="2_48im4"]
+
+[node name="ThrowPotion" type="Node2D"]
+script = ExtResource("1_fgnvp")
+temp_potion = ExtResource("2_48im4")
+
+[node name="timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="aim_line" type="Line2D" parent="."]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(0, 0, 10, 0)
+width = 2.0
+default_color = Color(0.486275, 0.784314, 0.968627, 0.658824)

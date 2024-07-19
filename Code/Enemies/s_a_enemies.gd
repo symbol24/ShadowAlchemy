@@ -1,0 +1,1 @@
+class_name SAEnemy extends SACharacterBody2D

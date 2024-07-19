@@ -1,0 +1,1 @@
+class_name SAMainCharacter extends SACharacterBody2D

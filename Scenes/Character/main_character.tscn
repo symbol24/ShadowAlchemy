@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxgbmso454spb"]
+
+[ext_resource type="PackedScene" uid="uid://cp0101vlmk8x3" path="res://Scenes/Character/s_a_character.tscn" id="1_4u4i5"]
+[ext_resource type="Script" path="res://Code/Character/s_a_main_character.gd" id="2_lm4qm"]
+[ext_resource type="PackedScene" uid="uid://bb4r86jso6ntg" path="res://Scenes/Utilities/s_a_camera.tscn" id="3_ec6kc"]
+[ext_resource type="Resource" uid="uid://cjwfhv4acdubq" path="res://Data/Characters/main_character.tres" id="3_od2nr"]
+[ext_resource type="Texture2D" uid="uid://ba7dh1uaovvde" path="res://Textures/AssetPack/Light/idle_blink/idle_blink2.png" id="3_rsxsx"]
+[ext_resource type="PackedScene" uid="uid://c58mpbqmx0766" path="res://Scenes/Actions/move.tscn" id="6_nl1t7"]
+[ext_resource type="PackedScene" uid="uid://v55mj1pxbia6" path="res://Scenes/Actions/jump.tscn" id="7_0t0bg"]
+[ext_resource type="PackedScene" uid="uid://dkgyvccw8nmrr" path="res://Scenes/Actions/throw_potion.tscn" id="7_lsr05"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yg3ts"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x6gtk"]
+radius = 6.0
+height = 18.0
+
+[node name="MainCharacter" groups=["main_character"] instance=ExtResource("1_4u4i5")]
+script = ExtResource("2_lm4qm")
+data = ExtResource("3_od2nr")
+
+[node name="SACamera" parent="." index="0" instance=ExtResource("3_ec6kc")]
+position = Vector2(0, -100)
+zoom = Vector2(1.5, 1.5)
+
+[node name="sprite" parent="." index="1"]
+texture = ExtResource("3_rsxsx")
+
+[node name="move_collider" parent="." index="2"]
+visible = false
+shape = SubResource("CapsuleShape2D_yg3ts")
+
+[node name="hit_collider" parent="hit_detection" index="0"]
+visible = false
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_x6gtk")
+
+[node name="Move" parent="." index="4" instance=ExtResource("6_nl1t7")]
+
+[node name="Jump" parent="." index="5" instance=ExtResource("7_0t0bg")]
+
+[node name="ThrowPotion" parent="." index="6" instance=ExtResource("7_lsr05")]
+position = Vector2(0, -9)
+
+[node name="left" parent="." index="7"]
+visible = false
+
+[node name="center" parent="." index="8"]
+visible = false
+
+[node name="right" parent="." index="9"]
+visible = false

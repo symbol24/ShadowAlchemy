@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://brt5paxjgbof"]
+
+[ext_resource type="Texture2D" uid="uid://cwiuyseisuiay" path="res://Textures/Potions/103_Potion_Health_A.png" id="1_8rn0f"]
+[ext_resource type="Script" path="res://Code/Potions/s_a_throwable_potion.gd" id="1_vffbv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsppx"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue3c3"]
+radius = 4.0
+
+[node name="SAPotion" type="RigidBody2D" groups=["potion"]]
+collision_layer = 8
+collision_mask = 0
+mass = 0.3
+script = ExtResource("1_vffbv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8rn0f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tsppx")
+
+[node name="hit_detection" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 17
+input_pickable = false
+
+[node name="hit_collider" type="CollisionShape2D" parent="hit_detection"]
+visible = false
+shape = SubResource("CircleShape2D_ue3c3")
