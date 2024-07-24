@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccslikmfa0502"
-path="res://.godot/imported/32_Concentrated_Blue.png-30f73a543eec5d0d694ac728c283e8d5.ctex"
+uid="uid://cne5afv1g3gw8"
+path="res://.godot/imported/001_fire_potion.png-8917c4d70dcd357e36aa609fec516c58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Potions/32_Concentrated_Blue.png"
-dest_files=["res://.godot/imported/32_Concentrated_Blue.png-30f73a543eec5d0d694ac728c283e8d5.ctex"]
+source_file="res://Textures/Potions/Selected/001_fire_potion.png"
+dest_files=["res://.godot/imported/001_fire_potion.png-8917c4d70dcd357e36aa609fec516c58.ctex"]
 
 [params]
 

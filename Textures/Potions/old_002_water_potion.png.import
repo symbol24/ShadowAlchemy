@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0qnrgajqxiaa"
-path="res://.godot/imported/35_Concentrated_Green.png-a8ce3efedbc78f549b85dc5a82df24a1.ctex"
+uid="uid://swi48elfxu2s"
+path="res://.godot/imported/old_002_water_potion.png-ddf4126006925f28fafbdc38cd1d9ad1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Potions/35_Concentrated_Green.png"
-dest_files=["res://.godot/imported/35_Concentrated_Green.png-a8ce3efedbc78f549b85dc5a82df24a1.ctex"]
+source_file="res://Textures/Potions/old_002_water_potion.png"
+dest_files=["res://.godot/imported/old_002_water_potion.png-ddf4126006925f28fafbdc38cd1d9ad1.ctex"]
 
 [params]
 

@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://Code/Utilities/s_a_camera.gd" id="1_ud8ep"]
 
-[node name="SACamera" type="Camera2D"]
+[node name="SACamera" type="Camera2D" groups=["camera"]]
 script = ExtResource("1_ud8ep")

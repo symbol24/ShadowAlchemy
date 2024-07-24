@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxosjrfv78m2e"
-path="res://.godot/imported/463_Potion_Angelic_A.png-f16aa2987175c5c8138c99ecfd59cd40.ctex"
+uid="uid://eyujl87atlvh"
+path="res://.godot/imported/002_air_potion.png-d729927c511173a3db842a91d47f0444.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Potions/463_Potion_Angelic_A.png"
-dest_files=["res://.godot/imported/463_Potion_Angelic_A.png-f16aa2987175c5c8138c99ecfd59cd40.ctex"]
+source_file="res://Textures/Potions/Selected/002_air_potion.png"
+dest_files=["res://.godot/imported/002_air_potion.png-d729927c511173a3db842a91d47f0444.ctex"]
 
 [params]
 

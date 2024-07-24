@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://hmm0xfwl2mto"]
+
+[ext_resource type="Script" path="res://Code/FX/s_a_potion_hit_fx.gd" id="1_017md"]
+[ext_resource type="Resource" uid="uid://bio6hl3p38xpl" path="res://Data/Potions/Attacks/fire_potion_hit_fx_data.tres" id="2_bq2r6"]
+[ext_resource type="Texture2D" uid="uid://cxr7prsemhnlf" path="res://Textures/potion_fxs.png" id="3_6bvjp"]
+[ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="4_xftmy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fq1b"]
+radius = 23.0
+
+[sub_resource type="Animation" id="Animation_dpup0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_xdbl2"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(4, 5), Vector2i(5, 5), Vector2i(6, 5), Vector2i(7, 5), Vector2i(8, 5), Vector2i(9, 5)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4x87"]
+_data = {
+"RESET": SubResource("Animation_dpup0"),
+"explosion": SubResource("Animation_xdbl2")
+}
+
+[node name="SAPotionHitFx" type="Area2D"]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("1_017md")
+data = ExtResource("2_bq2r6")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_6bvjp")
+hframes = 11
+vframes = 9
+frame = 55
+
+[node name="attack_collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_5fq1b")
+
+[node name="animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_s4x87")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.560784, 0.376471, 1)
+energy = 1.5
+texture = ExtResource("4_xftmy")
+texture_scale = 0.35

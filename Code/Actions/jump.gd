@@ -7,7 +7,7 @@ func _ready():
 	super._ready()
 	if SAOwner: jump_count = SAOwner.data.jump_count
 	else: print("Jump has no SAOwner?")
-	SASignals.CharacterLanded.connect(set_landed)
+	SASignals.CharacterGrounded.connect(set_landed)
 
 func _physics_process(_delta):
 	if SAOwner and GameMode.is_playing():

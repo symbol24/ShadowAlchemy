@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b35tkmh2loc4l"
-path="res://.godot/imported/cavesofgallet_tiles.png-f9dd16e57e9ec451f840b07faa16a19b.ctex"
+uid="uid://byohn7tfbbgrf"
+path="res://.godot/imported/006_dark_potion.png-6e4a5dea88be2b59db754178569fa400.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/cavesofgallet_tiles.png"
-dest_files=["res://.godot/imported/cavesofgallet_tiles.png-f9dd16e57e9ec451f840b07faa16a19b.ctex"]
+source_file="res://Textures/Potions/Selected/006_dark_potion.png"
+dest_files=["res://.godot/imported/006_dark_potion.png-6e4a5dea88be2b59db754178569fa400.ctex"]
 
 [params]
 

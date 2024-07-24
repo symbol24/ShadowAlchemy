@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://brfmhv4uhlilx"]
+
+[ext_resource type="Script" path="res://Code/FX/s_a_potion_particle.gd" id="1_ckqsh"]
+
+[sub_resource type="Gradient" id="Gradient_5v8xo"]
+offsets = PackedFloat32Array(0, 0.720779)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5unjq"]
+gradient = SubResource("Gradient_5v8xo")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="PotionParticle" type="RigidBody2D"]
+collision_layer = 256
+collision_mask = 17
+script = ExtResource("1_ckqsh")
+
+[node name="sprite" type="Sprite2D" parent="."]
+
+[node name="size_collider" type="CollisionShape2D" parent="."]
+
+[node name="timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="damage_area" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 256
+collision_mask = 16
+
+[node name="damage_collider" type="CollisionShape2D" parent="damage_area"]
+
+[node name="particle_light" type="PointLight2D" parent="."]
+energy = 0.5
+texture = SubResource("GradientTexture2D_5unjq")

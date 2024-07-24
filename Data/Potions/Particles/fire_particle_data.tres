@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ParticleData" load_steps=3 format=3 uid="uid://rhq3m0y4p0s6"]
+
+[ext_resource type="Script" path="res://Code/FX/particle_data.gd" id="1_d5nr7"]
+[ext_resource type="Resource" uid="uid://bkqj72cue4xbg" path="res://Data/Potions/Particles/Damages/fire_damage.tres" id="1_hdkdw"]
+
+[resource]
+script = ExtResource("1_d5nr7")
+element = 2
+path = "res://Scenes/FX/potion_particle_fire.tscn"
+speed = 140.0
+life_time = 10.0
+damages = Array[Resource("res://Code/Utilities/damage.gd")]([ExtResource("1_hdkdw")])

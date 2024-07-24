@@ -17,6 +17,10 @@ class_name SACharacterData extends Resource
 @export_subgroup("Defence")
 @export var light_armor:float = 1
 @export var dark_armor:float = 1
+@export var fire_resist:float = 0.0
+@export var air_resist:float = 0.0
+@export var earth_resist:float = 0.0
+@export var water_resist:float = 0.0
 
 var character:SACharacterBody2D = null
 

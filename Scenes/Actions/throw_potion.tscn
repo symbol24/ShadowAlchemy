@@ -1,11 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkgyvccw8nmrr"]
+[gd_scene load_steps=4 format=3 uid="uid://dkgyvccw8nmrr"]
 
 [ext_resource type="Script" path="res://Code/Actions/throw_potion.gd" id="1_fgnvp"]
-[ext_resource type="PackedScene" uid="uid://brt5paxjgbof" path="res://Scenes/Potions/test_potion.tscn" id="2_48im4"]
+[ext_resource type="Resource" uid="uid://dwtdtwqpjqf0p" path="res://Data/Potions/test_potion.tres" id="2_87h0t"]
+[ext_resource type="Resource" uid="uid://cxir7witd23jy" path="res://Data/Potions/light_potion.tres" id="3_ert63"]
 
 [node name="ThrowPotion" type="Node2D"]
 script = ExtResource("1_fgnvp")
-temp_potion = ExtResource("2_48im4")
+potions = Array[Resource("res://Code/Potions/potion_data.gd")]([ExtResource("2_87h0t"), ExtResource("3_ert63")])
 
 [node name="timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -14,6 +15,7 @@ one_shot = true
 [node name="aim_line" type="Line2D" parent="."]
 unique_name_in_owner = true
 visible = false
+z_index = 500
 points = PackedVector2Array(0, 0, 10, 0)
 width = 2.0
 default_color = Color(0.486275, 0.784314, 0.968627, 0.658824)

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcx3paxj3hk1h"]
+
+[ext_resource type="Script" path="res://Code/FX/s_a_potion_particle.gd" id="1_xnxol"]
+[ext_resource type="Resource" uid="uid://c2kyfnge7iuof" path="res://Data/Potions/Particles/light_particle_data.tres" id="2_27i0r"]
+[ext_resource type="Texture2D" uid="uid://boayc8r2oi4sf" path="res://Textures/potion_base_particle.png" id="2_gxwnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67r0p"]
+size = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_5v8xo"]
+offsets = PackedFloat32Array(0, 0.720779)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5unjq"]
+gradient = SubResource("Gradient_5v8xo")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="PotionParticle" type="RigidBody2D"]
+collision_layer = 256
+collision_mask = 17
+script = ExtResource("1_xnxol")
+data = ExtResource("2_27i0r")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(5, -14)
+texture = ExtResource("2_gxwnw")
+
+[node name="size_collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_67r0p")
+
+[node name="timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="damage_area" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 256
+collision_mask = 16
+
+[node name="damage_collider" type="CollisionShape2D" parent="damage_area"]
+
+[node name="particle_light" type="PointLight2D" parent="."]
+energy = 0.5
+texture = SubResource("GradientTexture2D_5unjq")

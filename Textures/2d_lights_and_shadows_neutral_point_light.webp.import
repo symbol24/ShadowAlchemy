@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cne5afv1g3gw8"
-path="res://.godot/imported/33_Concentrated_Red.png-a3bbd3a5f12e6d9b8443016bd1839051.ctex"
+uid="uid://b30ap8i8a2ip1"
+path="res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-ac6759fb3bca03df7801850de75a2441.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Potions/33_Concentrated_Red.png"
-dest_files=["res://.godot/imported/33_Concentrated_Red.png-a3bbd3a5f12e6d9b8443016bd1839051.ctex"]
+source_file="res://Textures/2d_lights_and_shadows_neutral_point_light.webp"
+dest_files=["res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-ac6759fb3bca03df7801850de75a2441.ctex"]
 
 [params]
 

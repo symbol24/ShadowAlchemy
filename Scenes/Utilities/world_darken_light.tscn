@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cfg31l4qt7im1"]
+
+[node name="sa_world_light" type="DirectionalLight2D"]
+energy = 1.2
+blend_mode = 1
+
+[node name="blue_light" type="DirectionalLight2D" parent="."]
+color = Color(0.184314, 0.686275, 1, 1)
+energy = 0.1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb5oo1timpq6f"
-path="res://.godot/imported/223_Potion_Regeneration_A.png-0f661538c447fb643a45690b48339acb.ctex"
+uid="uid://bt2bti6naf0to"
+path="res://.godot/imported/black_sprite.png-299022b7bc3eadeb0890eebb5b81739c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Potions/223_Potion_Regeneration_A.png"
-dest_files=["res://.godot/imported/223_Potion_Regeneration_A.png-0f661538c447fb643a45690b48339acb.ctex"]
+source_file="res://Textures/black_sprite.png"
+dest_files=["res://.godot/imported/black_sprite.png-299022b7bc3eadeb0890eebb5b81739c.ctex"]
 
 [params]
 

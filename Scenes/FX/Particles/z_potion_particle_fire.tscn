@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://i574dcemnk2e"]
+
+[ext_resource type="PackedScene" uid="uid://brfmhv4uhlilx" path="res://Scenes/FX/Particles/s_a_potion_particle.tscn" id="1_q0fiy"]
+[ext_resource type="Texture2D" uid="uid://boayc8r2oi4sf" path="res://Textures/potion_base_particle.png" id="2_2wq6m"]
+[ext_resource type="Resource" uid="uid://rhq3m0y4p0s6" path="res://Data/Potions/Particles/fire_particle_data.tres" id="2_xd63h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaupf"]
+size = Vector2(1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1ac6"]
+radius = 4.0
+
+[node name="PotionParticle" instance=ExtResource("1_q0fiy")]
+collision_mask = 1
+data = ExtResource("2_xd63h")
+
+[node name="sprite" parent="." index="0"]
+position = Vector2(5, -13.5)
+texture = ExtResource("2_2wq6m")
+
+[node name="size_collider" parent="." index="1"]
+shape = SubResource("RectangleShape2D_aaupf")
+
+[node name="damage_area" parent="." index="3"]
+visible = false
+
+[node name="damage_collider" parent="damage_area" index="0"]
+shape = SubResource("CircleShape2D_u1ac6")
+
+[node name="particle_light" parent="." index="4"]
+color = Color(1, 0.560784, 0.376471, 1)

@@ -25,11 +25,11 @@ Audio="*res://Code/Autoloads/audio.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/size/viewport_width=320
+window/size/viewport_height=180
 window/size/window_width_override=1280
-window/size/window_height_override=960
-window/stretch/mode="viewport"
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -44,6 +44,10 @@ folder_colors={
 "res://Scenes/": "yellow",
 "res://Textures/": "pink"
 }
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
@@ -468,8 +472,9 @@ ui_tab_right={
 2d_physics/layer_6="enemy_attacks"
 2d_physics/layer_7="collectibles"
 2d_physics/layer_8="interractibles"
+2d_physics/layer_9="potion_particles"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"

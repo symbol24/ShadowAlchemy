@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://swi48elfxu2s"
-path="res://.godot/imported/163_Potion_Mana_A.png-455f8799a0535962d00952548d76046f.ctex"
+uid="uid://bb5oo1timpq6f"
+path="res://.godot/imported/something.png-e3b9af2b0a4a51a41aa9df7422495804.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Potions/163_Potion_Mana_A.png"
-dest_files=["res://.godot/imported/163_Potion_Mana_A.png-455f8799a0535962d00952548d76046f.ctex"]
+source_file="res://Textures/Potions/something.png"
+dest_files=["res://.godot/imported/something.png-e3b9af2b0a4a51a41aa9df7422495804.ctex"]
 
 [params]
 

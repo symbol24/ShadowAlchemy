@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ParticleData" load_steps=2 format=3 uid="uid://c2kyfnge7iuof"]
+
+[ext_resource type="Script" path="res://Code/FX/particle_data.gd" id="1_jnk0o"]
+
+[resource]
+script = ExtResource("1_jnk0o")
+element = 0
+path = ""
+speed = 140.0
+life_time = 10.0
+damages = Array[Resource("res://Code/Utilities/damage.gd")]([])

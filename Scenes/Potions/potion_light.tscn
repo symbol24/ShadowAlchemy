@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://defqo2te84ln0"]
+
+[ext_resource type="Script" path="res://Code/Potions/s_a_throwable_potion.gd" id="1_j10x5"]
+[ext_resource type="Resource" uid="uid://cxir7witd23jy" path="res://Data/Potions/light_potion.tres" id="2_6rbpp"]
+[ext_resource type="Texture2D" uid="uid://cwojxoeehs7c6" path="res://Textures/Potions/Selected/005_light_potion.png" id="3_buk10"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsppx"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue3c3"]
+radius = 5.0
+
+[sub_resource type="Gradient" id="Gradient_051n1"]
+offsets = PackedFloat32Array(0, 0.636364)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_43fjm"]
+gradient = SubResource("Gradient_051n1")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="LightPotion" type="RigidBody2D" groups=["potion"]]
+collision_layer = 8
+collision_mask = 0
+mass = 0.3
+script = ExtResource("1_j10x5")
+data = ExtResource("2_6rbpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_buk10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_tsppx")
+
+[node name="hit_detection" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 8
+collision_mask = 17
+input_pickable = false
+
+[node name="hit_collider" type="CollisionShape2D" parent="hit_detection"]
+shape = SubResource("CircleShape2D_ue3c3")
+
+[node name="potion_light" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_43fjm")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://l5euguc2h1ud"]
+
+[ext_resource type="Shader" path="res://Data/Worlds/light_shader.gdshader" id="1_5aob8"]
+[ext_resource type="Script" path="res://Code/Utilities/lighting.gd" id="2_p3450"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgr1m"]
+shader = ExtResource("1_5aob8")
+shader_parameter/lights = null
+shader_parameter/number_of_lights = 1
+shader_parameter/modulate_color = Color(0, 0, 0.152941, 0.960784)
+shader_parameter/base_radius = 32.0
+shader_parameter/band_radius = 24.0
+shader_parameter/band_str = 0.3
+
+[node name="Light_layer" type="CanvasLayer"]
+
+[node name="lighting" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_qgr1m")
+custom_minimum_size = Vector2(320, 180)
+offset_right = 320.0
+offset_bottom = 180.0
+script = ExtResource("2_p3450")
