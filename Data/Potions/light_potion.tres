@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PotionData" load_steps=2 format=3 uid="uid://cxir7witd23jy"]
+[gd_resource type="Resource" script_class="PotionData" load_steps=3 format=3 uid="uid://cxir7witd23jy"]
 
 [ext_resource type="Script" path="res://Code/Potions/potion_data.gd" id="1_7fx78"]
+[ext_resource type="Resource" uid="uid://bnbt1tplac1sf" path="res://Data/UI/PotionIcons/potion_light.tres" id="1_r820d"]
 
 [resource]
 script = ExtResource("1_7fx78")
@@ -11,3 +12,4 @@ particle_count = 2
 element = 0
 hit_fx_path = ""
 throw_delay = 5.0
+potion_icon = ExtResource("1_r820d")

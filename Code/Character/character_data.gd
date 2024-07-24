@@ -32,15 +32,51 @@ var current_hp:float = 100:
 			current_hp = 0
 		elif current_hp > max_hp:
 			current_hp = max_hp
-		SASignals.HPUpdated.emit(character, current_hp - pre)
-		if current_hp == 0: SASignals.CharacterDead.emit(character)
+		SASignals.HPUpdated.emit(self, current_hp - pre)
+		if current_hp == 0: 
+			SASignals.CharacterDead.emit(self)
+			current_lives -= 1
+			
 var max_hp:float = 100:
 	set(value):
 		max_hp = value
-		SASignals.MaxHPUpdated.emit(character, max_hp)
+		SASignals.MaxHPUpdated.emit(self, max_hp)
+		
 var percent_hp:
 	get:
-		return current_hp / max_hp
+		return roundf((current_hp / max_hp) * 100)
+		
+var current_lives:
+	set(value):
+		current_lives = value
+		if current_lives == 0:
+			SASignals.CharacterNoMoreLive.emit(self)
 
 func update_hp(_value := 0):
 	current_hp += _value
+
+func receive_damage(_damage:Damage):
+	if _damage.damage_owner != self:
+		var final = _damage.base_damage
+		var percent_protection := 0.0
+		var flat_protection = 0.0
+		for element in _damage.elements:
+			match element:
+				GameMode.ELEMENT.FIRE:
+					percent_protection += fire_resist
+				GameMode.ELEMENT.AIR:
+					percent_protection += air_resist
+				GameMode.ELEMENT.EARTH:
+					percent_protection += earth_resist
+				GameMode.ELEMENT.WATER:
+					percent_protection += water_resist
+				GameMode.ELEMENT.LIGHT:
+					flat_protection += light_armor
+				GameMode.ELEMENT.DARK:
+					flat_protection += dark_armor
+		
+		final -= final * percent_protection
+		final -= flat_protection
+		if final < 0.0:
+			final = 0.0
+		update_hp(-final)

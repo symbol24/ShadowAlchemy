@@ -1,20 +1,19 @@
 extends SAAction
 
-const POTIONS = [preload("res://Scenes/Potions/test_potion.tscn"), preload("res://Scenes/Potions/potion_fire.tscn"), preload("res://Scenes/Potions/potion_light.tscn")]
+const POTIONS = [preload("res://Scenes/Potions/potion_fire.tscn"), preload("res://Scenes/Potions/potion_light.tscn")]
 
 @export var potion_datas:Array[PotionData] = []
 @export var use_const_preloads := false
 
-@onready var timer:Timer = %timer
 @onready var aim_line:Line2D = %aim_line
 
 var can_throw := true
 var aim_direction := Vector2.ZERO
 var max_radius := 30.0
 var toggle_pressed := false
-var toggle_delay := 0.2
+var toggle_delay := 0.3
 var toggle_timer := 0.0
-var potions:Array[PackedScene] = []
+var potions:Array[Dictionary] = []
 
 var selection := 0:
 	set(value):
@@ -23,13 +22,24 @@ var selection := 0:
 
 func _ready():
 	super._ready()
-	if SAOwner: timer.wait_time = SAOwner.data.throw_delay
-	timer.timeout.connect(_timer_timeout)
+	var to_use:Array[PackedScene] = []
 	if !use_const_preloads:
 		for each in potion_datas:
-			potions.append(load(each.potion_path))
-	else: potions = POTIONS
-	
+			to_use.append(load(each.potion_path))
+	else: to_use = POTIONS
+	for each in to_use:
+		var temp = each.instantiate()
+		potions.append(
+			{
+				"potion":each,
+				"data":temp.data,
+				"can_throw":true,
+				"timer":0.0,
+				"delay":temp.data.throw_delay
+			}
+		)
+		SASignals.AddPotion.emit(temp.data)
+		SASignals.PotionSelectionChanged.emit(selection)
 
 func _process(_delta):
 	if SAOwner and GameMode.is_playing():
@@ -42,8 +52,17 @@ func _process(_delta):
 		if aim_direction != Vector2.ZERO and SAInput.action_7:
 			throw(aim_direction.normalized(), potions[selection])
 		
-		if SAInput.action_5: selection = tab_selection(selection, true)
-		elif SAInput.action_8: selection = tab_selection(selection, false)
+		if SAInput.action_5 and !toggle_pressed: selection = tab_selection(selection, true)
+		elif SAInput.action_8 and !toggle_pressed: selection = tab_selection(selection, false)
+		
+		for each in potions:
+			if !each["can_throw"]:
+				each["timer"] += _delta
+				SASignals.PotionTimerUpdate.emit(each["data"], each["timer"])
+				if each["timer"] >= each["delay"]:
+					each["timer"] = 0.0
+					SASignals.PotionTimerUpdate.emit(each["data"], each["timer"])
+					each["can_throw"] = true
 		
 		if toggle_pressed:
 			toggle_timer += _delta
@@ -54,16 +73,14 @@ func _process(_delta):
 func aim() -> Vector2:
 	return Vector2(SAInput.aim_left_right, SAInput.aim_up_down)
 
-func throw(_aim_direction:=Vector2.ZERO, _potion:PackedScene = null):
-	if can_throw and _potion:
-		can_throw = false
-		#var loaded = load(_potion.potion_path)
-		var new_potion = _potion.instantiate()
+func throw(_aim_direction:=Vector2.ZERO, _potion:Dictionary = {}):
+	if _potion.has("potion") and _potion["can_throw"]:
+		_potion["can_throw"] = false
+		var new_potion = _potion["potion"].instantiate()
 		GameMode.world.add_child(new_potion)
 		new_potion.global_position = global_position
 		new_potion.apply_central_impulse(_aim_direction.normalized() * get_final_throw_strength())
-		timer.wait_time = new_potion.data.throw_delay
-		timer.start()
+
 
 func _timer_timeout():
 	can_throw = true

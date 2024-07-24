@@ -22,6 +22,7 @@ SASignals="*res://Code/Autoloads/signals.gd"
 SAInput="*res://Code/Autoloads/player_input.gd"
 GameMode="*res://Code/Autoloads/gamemode.gd"
 Audio="*res://Code/Autoloads/audio.gd"
+UI="*res://Scenes/UI/ui.tscn"
 
 [display]
 

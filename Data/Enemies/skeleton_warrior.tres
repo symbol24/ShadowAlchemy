@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3 uid="uid://dirby7sbj7xya"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_swx2m"]
+
+[resource]
+script = ExtResource("1_swx2m")
+id = "skeleton_warrior"
+speed = 60.0
+jump_height = 0.0
+jump_count = 0
+acceleration = 700
+friction = 1100
+air_multiplier = 0.6
+base_hp = 20.0
+starting_life_count = 1
+light_armor = 0.0
+dark_armor = 0.0
+fire_resist = 0.0
+air_resist = 0.0
+earth_resist = 0.0
+water_resist = 0.0

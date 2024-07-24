@@ -4,12 +4,8 @@ class_name SAPotionHitFX extends Area2D
 
 @onready var animator:AnimationPlayer = %animator
 
-func _ready():
-	print("hit_fx in ready: ", global_position)
-
-func play():
-	if animator:
-		animator.play("explosion")
+#func _ready():
+	#print("hit_fx in ready: ", global_position)
 
 func destroy():
 	queue_free.call_deferred()

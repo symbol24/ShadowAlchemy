@@ -54,6 +54,3 @@ func spawn_hit_fx(_path:=""):
 		var hit_fx = loaded.instantiate()
 		hit_fx.global_position = global_position
 		GameMode.world.add_child.call_deferred(hit_fx)
-		print("potion pos: ", global_position)
-		print("hit_fx pos: ", hit_fx.global_position)
-		hit_fx.play()

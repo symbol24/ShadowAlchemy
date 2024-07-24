@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://3x2iruvktc0i"]
+
+[ext_resource type="Script" path="res://Code/UI/potions_ui.gd" id="1_r135m"]
+[ext_resource type="Texture2D" uid="uid://bcxkbyimvvrba" path="res://Textures/UI/GUI.png" id="2_bc7dl"]
+
+[node name="potions" type="Control"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = -135.0
+offset_bottom = 25.0
+grow_horizontal = 2
+script = ExtResource("1_r135m")
+
+[node name="background_nine_rect" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+texture = ExtResource("2_bc7dl")
+region_rect = Rect2(81.3529, 97.0819, 29.5936, 29.8638)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="spacer" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="hbox" type="HBoxContainer" parent="vbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="vbox/hbox"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0

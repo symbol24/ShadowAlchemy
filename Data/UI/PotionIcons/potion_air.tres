@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PotionIconData" load_steps=3 format=3 uid="uid://dji0j415e5sq"]
+
+[ext_resource type="Script" path="res://Code/UI/potion_icon_data.gd" id="1_dnrs1"]
+[ext_resource type="Texture2D" uid="uid://eyujl87atlvh" path="res://Textures/Potions/Selected/002_air_potion.png" id="2_dmt4p"]
+
+[resource]
+script = ExtResource("1_dnrs1")
+id = "air"
+texture = ExtResource("2_dmt4p")

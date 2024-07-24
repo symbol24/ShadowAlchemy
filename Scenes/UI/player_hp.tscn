@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://chjrpdgur75om"]
+
+[ext_resource type="Script" path="res://Code/UI/player_hp.gd" id="1_hb6xx"]
+[ext_resource type="Texture2D" uid="uid://df1gkt86bo8ns" path="res://Textures/UI/hp_back.png" id="1_hlx00"]
+[ext_resource type="Texture2D" uid="uid://bf8nr806ljl53" path="res://Textures/UI/hp_fill.png" id="2_1yvpc"]
+[ext_resource type="Theme" uid="uid://m2c1i5odp7sl" path="res://Data/UI/Themes/hp_bar_theme.tres" id="4_5jlwo"]
+
+[node name="player_hp" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hb6xx")
+
+[node name="hp_bar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 10)
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 7.0
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_hlx00")
+texture_progress = ExtResource("2_1yvpc")
+
+[node name="hp_label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 41.0
+offset_bottom = 25.0
+theme = ExtResource("4_5jlwo")
+text = "00/00"
