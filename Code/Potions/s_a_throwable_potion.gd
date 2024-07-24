@@ -4,18 +4,18 @@ class_name SAThrowablePotion extends RigidBody2D
 @onready var hit_detection:Area2D = %hit_detection
 
 var break_once := false
-var hit_fx
+var loaded = null
 
 func _ready():
 	hit_detection.body_entered.connect(_collision_detection)
-	var loaded = load(data.hit_fx_path)
-	hit_fx = loaded.instantiate()
+	if data.hit_fx_path:
+		loaded = load(data.hit_fx_path)
+	
 
 func _collision_detection(_area):
 	for each in _area.get_groups():
 		if each in ["ground", "enemy"]: 
 			break_potion()
-			return
 	
 func break_potion():
 	if !break_once:
@@ -26,12 +26,12 @@ func break_potion():
 
 func spawn_particles(_path := "", _count := 1.0):
 	if _path:
-		var loaded = load(_path)
+		var _loaded = load(_path)
 		var direction = Vector2(0.1, -1)
 		var split:float = 1/(_count+1)
 		var x = 0
 		while x < _count:
-			var particle = loaded.instantiate() as SAPotionParticle
+			var particle = _loaded.instantiate() as SAPotionParticle
 			GameMode.world.add_child.call_deferred(particle)
 			particle.global_position = global_position
 			particle.apply_throw(direction)
@@ -42,7 +42,7 @@ func spawn_particles(_path := "", _count := 1.0):
 		direction = Vector2(-split, -1)
 		
 		while x < _count:
-			var particle = loaded.instantiate() as SAPotionParticle
+			var particle = _loaded.instantiate() as SAPotionParticle
 			GameMode.world.add_child.call_deferred(particle)
 			particle.global_position = global_position
 			particle.apply_throw(direction)
@@ -51,6 +51,7 @@ func spawn_particles(_path := "", _count := 1.0):
 			
 func spawn_hit_fx(_path:=""):
 	if _path:
+		var hit_fx = loaded.instantiate()
 		hit_fx.global_position = global_position
 		GameMode.world.add_child.call_deferred(hit_fx)
 		print("potion pos: ", global_position)

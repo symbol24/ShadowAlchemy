@@ -79,6 +79,7 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_s4x87")
 }
+autoplay = "explosion"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 0.560784, 0.376471, 1)

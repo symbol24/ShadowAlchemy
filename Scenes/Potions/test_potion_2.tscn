@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://do85qgg0ulfxv"]
+
+[ext_resource type="Script" path="res://Code/test.gd" id="1_5lsgp"]
+[ext_resource type="Texture2D" uid="uid://brh6jwy2ih4ot" path="res://Textures/Potions/461_Potion_Dull_III_S.png" id="2_o2s8n"]
+[ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="3_18vog"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uhdns"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u0kov"]
+radius = 5.0
+height = 18.0
+
+[node name="test_potion_2" type="RigidBody2D"]
+position = Vector2(320, 139)
+collision_layer = 8
+script = ExtResource("1_5lsgp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_uhdns")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_o2s8n")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("3_18vog")
+texture_scale = 0.5
+
+[node name="hit_area" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 8
+
+[node name="hit_collision" type="CollisionShape2D" parent="hit_area"]
+shape = SubResource("CapsuleShape2D_u0kov")

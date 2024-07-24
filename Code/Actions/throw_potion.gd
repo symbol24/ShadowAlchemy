@@ -1,6 +1,9 @@
 extends SAAction
 
-@export var potions:Array[PotionData] = []
+const POTIONS = [preload("res://Scenes/Potions/test_potion.tscn"), preload("res://Scenes/Potions/potion_fire.tscn"), preload("res://Scenes/Potions/potion_light.tscn")]
+
+@export var potion_datas:Array[PotionData] = []
+@export var use_const_preloads := false
 
 @onready var timer:Timer = %timer
 @onready var aim_line:Line2D = %aim_line
@@ -11,6 +14,7 @@ var max_radius := 30.0
 var toggle_pressed := false
 var toggle_delay := 0.2
 var toggle_timer := 0.0
+var potions:Array[PackedScene] = []
 
 var selection := 0:
 	set(value):
@@ -21,6 +25,11 @@ func _ready():
 	super._ready()
 	if SAOwner: timer.wait_time = SAOwner.data.throw_delay
 	timer.timeout.connect(_timer_timeout)
+	if !use_const_preloads:
+		for each in potion_datas:
+			potions.append(load(each.potion_path))
+	else: potions = POTIONS
+	
 
 func _process(_delta):
 	if SAOwner and GameMode.is_playing():
@@ -45,11 +54,11 @@ func _process(_delta):
 func aim() -> Vector2:
 	return Vector2(SAInput.aim_left_right, SAInput.aim_up_down)
 
-func throw(_aim_direction:=Vector2.ZERO, _potion:PotionData = null):
+func throw(_aim_direction:=Vector2.ZERO, _potion:PackedScene = null):
 	if can_throw and _potion:
 		can_throw = false
-		var loaded = load(_potion.potion_path)
-		var new_potion = loaded.instantiate()
+		#var loaded = load(_potion.potion_path)
+		var new_potion = _potion.instantiate()
 		GameMode.world.add_child(new_potion)
 		new_potion.global_position = global_position
 		new_potion.apply_central_impulse(_aim_direction.normalized() * get_final_throw_strength())
