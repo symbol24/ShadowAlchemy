@@ -486,8 +486,10 @@ ui_tab_right={
 2d_physics/layer_7="collectibles"
 2d_physics/layer_8="interractibles"
 2d_physics/layer_9="potion_particles"
+2d_physics/layer_10="enemy_shields"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
+environment/glow/upscale_mode=0

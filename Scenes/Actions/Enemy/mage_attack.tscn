@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq60iq0a7r6et"]
+
+[ext_resource type="Script" path="res://Code/Actions/Enemy/mage_attack.gd" id="1_hk4ta"]
+
+[node name="MageAttack" type="Node2D"]
+script = ExtResource("1_hk4ta")
+
+[node name="attack_delay" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true

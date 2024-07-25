@@ -29,3 +29,17 @@ func set_character(_value):
 
 func connect_camera_remote(_camera, _remote:RemoteTransform2D):
 	_remote.set_remote_node(_camera.get_path())
+
+func check_elements(_to_check:GameMode.ELEMENT, _elements:Array[GameMode.ELEMENT]) -> bool:
+	var found := false
+	for each in _elements:
+		match each:
+			GameMode.ELEMENT.AIR:
+				if _to_check == GameMode.ELEMENT.EARTH: found = true
+			GameMode.ELEMENT.EARTH:
+				if _to_check == GameMode.ELEMENT.WATER: found = true
+			GameMode.ELEMENT.WATER:
+				if _to_check == GameMode.ELEMENT.FIRE: found = true
+			GameMode.ELEMENT.FIRE:
+				if _to_check == GameMode.ELEMENT.AIR: found = true
+	return found

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Damage" load_steps=3 format=3 uid="uid://jd2mvpskooxd"]
+
+[ext_resource type="Resource" uid="uid://dirby7sbj7xya" path="res://Data/Enemies/skeleton_warrior.tres" id="1_5smam"]
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_46akr"]
+
+[resource]
+script = ExtResource("1_46akr")
+damage_owner = ExtResource("1_5smam")
+base_damage = 15.0
+elements = Array[int]([1])

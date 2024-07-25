@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d00twh7v0bt4g"]
+
+[ext_resource type="Script" path="res://Code/Actions/Enemy/warrior_attack.gd" id="1_qpo32"]
+
+[node name="WarriorAttack" type="Node2D"]
+script = ExtResource("1_qpo32")
+
+[node name="attack_delay" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true

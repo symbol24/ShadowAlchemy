@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyShieldData" load_steps=2 format=3 uid="uid://dhxsj22rydc5c"]
+
+[ext_resource type="Script" path="res://Code/Utilities/enemy_shield_data.gd" id="1_xro30"]
+
+[resource]
+script = ExtResource("1_xro30")
+hp = 1.0
+element = 5
+color_modulation = Color(0.159333, 0.526639, 1, 1)

@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Damage" load_steps=2 format=3 uid="uid://bkqj72cue4xbg"]
+[gd_resource type="Resource" script_class="Damage" load_steps=3 format=3 uid="uid://bkqj72cue4xbg"]
 
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_6gyd4"]
+[ext_resource type="Resource" uid="uid://cjwfhv4acdubq" path="res://Data/Characters/main_character.tres" id="1_arple"]
 
 [resource]
 script = ExtResource("1_6gyd4")
-base_damage = 1.0
+damage_owner = ExtResource("1_arple")
+base_damage = 10.0
+elements = Array[int]([2])

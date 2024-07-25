@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_3qkdn")
+max_distance_to_target = 50000.0
+attack_distance = 20000.0
 id = "skeleton_mage"
 speed = 40.0
 jump_height = 0.0

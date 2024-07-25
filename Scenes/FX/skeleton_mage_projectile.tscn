@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://cx23i7ualy7g4"]
+
+[ext_resource type="Script" path="res://Code/FX/skeleton_mage_projectile.gd" id="1_fdedp"]
+[ext_resource type="Texture2D" uid="uid://c37gthgkyruoc" path="res://Textures/FX/Fireball_68x9.png" id="2_iomci"]
+[ext_resource type="Resource" uid="uid://bq5jpxh04n4es" path="res://Data/Enemies/mage_attack.tres" id="2_ixqos"]
+[ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="4_f2anp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_20oro"]
+radius = 4.0
+height = 26.0
+
+[sub_resource type="Animation" id="Animation_2y4x7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_e0bpu"]
+resource_name = "cycle"
+length = 6.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xm0tp"]
+_data = {
+"RESET": SubResource("Animation_2y4x7"),
+"cycle": SubResource("Animation_e0bpu")
+}
+
+[node name="SkeletonMageProjectile" type="Area2D"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_fdedp")
+damages = Array[Resource("res://Code/Utilities/damage.gd")]([ExtResource("2_ixqos")])
+
+[node name="sprite" type="Sprite2D" parent="." groups=["to_flip"]]
+position = Vector2(-27, -0.499997)
+rotation = 3.14159
+texture = ExtResource("2_iomci")
+hframes = 10
+vframes = 6
+
+[node name="collider" type="CollisionShape2D" parent="." groups=["to_flip"]]
+visible = false
+position = Vector2(-6, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_20oro")
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xm0tp")
+}
+autoplay = "cycle"
+
+[node name="light" type="PointLight2D" parent="." groups=["to_flip"]]
+position = Vector2(-14.9, 0)
+scale = Vector2(1.77604, 1)
+energy = 0.7
+texture = ExtResource("4_f2anp")
+texture_scale = 0.15
