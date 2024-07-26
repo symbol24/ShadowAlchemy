@@ -17,9 +17,7 @@ offset_bottom = 40.0
 
 [node name="potions" parent="PlayerUI" instance=ExtResource("2_234t1")]
 layout_mode = 1
-offset_left = -15.0
 offset_top = 10.0
-offset_right = 10.0
 offset_bottom = 35.0
 
 [node name="player_hp" parent="PlayerUI" instance=ExtResource("3_a40p5")]

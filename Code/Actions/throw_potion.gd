@@ -1,9 +1,8 @@
 extends SAAction
 
-const POTIONS = [preload("res://Scenes/Potions/potion_fire.tscn"), preload("res://Scenes/Potions/potion_light.tscn")]
+const STARTERS = [preload("res://Data/Potions/heal_potion.tres"), preload("res://Data/Potions/fire_potion.tres")]
 
 @export var potion_datas:Array[PotionData] = []
-@export var use_const_preloads := false
 
 @onready var aim_line:Line2D = %aim_line
 
@@ -18,28 +17,15 @@ var potions:Array[Dictionary] = []
 var selection := 0:
 	set(value):
 		selection = value
+		if selection >= potions.size(): selection = 0
+		elif selection < 0: selection = potions.size()-1
 		SASignals.PotionSelectionChanged.emit(selection)
 
 func _ready():
 	SASignals.AddPotion.connect(_add_potion)
 	super._ready()
-	var to_use:Array[PackedScene] = []
-	if !use_const_preloads:
-		for each in potion_datas:
-			to_use.append(load(each.potion_path))
-	else: to_use = POTIONS
-	for each in to_use:
-		var temp = each.instantiate()
-		potions.append(
-			{
-				"potion":each,
-				"data":temp.data,
-				"can_throw":true,
-				"timer":0.0,
-				"delay":temp.data.throw_delay
-			}
-		)
-		SASignals.AddPotion.emit(temp.data)
+	for data in STARTERS:
+		SASignals.AddPotion.emit(data)
 	SASignals.PotionSelectionChanged.emit(selection)
 
 func _process(_delta):
@@ -55,8 +41,12 @@ func _process(_delta):
 		elif aim_direction == Vector2.ZERO and SAInput.action_7 and potions[selection]["data"].element == GameMode.ELEMENT.HEAL:
 			throw(aim_direction.normalized(), potions[selection])
 		
-		if SAInput.action_5 and !toggle_pressed: selection = tab_selection(selection, true)
-		elif SAInput.action_8 and !toggle_pressed: selection = tab_selection(selection, false)
+		if SAInput.action_5 and !toggle_pressed: 
+			toggle_pressed = true
+			selection -= 1
+		elif SAInput.action_8 and !toggle_pressed: 
+			toggle_pressed = true
+			selection += 1
 		
 		for each in potions:
 			if !each["can_throw"]:
@@ -100,16 +90,10 @@ func get_final_throw_strength() -> float:
 	strength = strength + ((SAOwner.data.speed/3) * (SAOwner.velocity.x / 100))
 	return strength
 
-func tab_selection(_current := 0, _left := false) -> int:
+func tab_selection(_left := false) -> int:
 	toggle_pressed = true
-	var new  = _current
-	if _left: 
-		new -= 1
-		if new < 0: new = potions.size()-1
-	else:
-		new += 1
-		if new >= potions.size(): new = 0
-	return new
+	if _left: return -1
+	return 1
 
 func _add_potion(_new_potion:PotionData = null):
 	if _new_potion:

@@ -1,4 +1,4 @@
-extends Control
+extends Container
 
 const POTION_BOX = preload("res://Scenes/UI/potion_box.tscn")
 
@@ -7,6 +7,8 @@ const POTION_BOX = preload("res://Scenes/UI/potion_box.tscn")
 
 var potions:Array[PotionData] = []
 var boxs := []
+var width := 20.0
+var spacer := 5.0
 
 func _ready():
 	SASignals.AddPotion.connect(_add_potion)
@@ -25,7 +27,7 @@ func _add_potion(_potion:PotionData):
 	new_box.data = _potion
 	boxs.append(new_box)
 	
-	background_nine_rect.size.x += hbox.size.x - 5
+	background_nine_rect.size.x = (width * potions.size()) + spacer
 	position.x = 160 - (background_nine_rect.size.x/2)
 
 func _update_selection(_value:=0):
