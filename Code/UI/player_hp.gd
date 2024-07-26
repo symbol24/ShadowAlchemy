@@ -6,8 +6,13 @@ extends Control
 func _ready():
 	SASignals.HPUpdated.connect(_update_hp)
 	SASignals.MaxHPUpdated.connect(_update_hp)
+	SASignals.CharacterInGamemode.connect(_initial_hp)
 	
 func _update_hp(_data:SACharacterData, _change := 0.0):
 	if _data and GameMode.character and _data == GameMode.character.data:
 		hp_bar.value = _data.percent_hp
 		hp_label.text = str(_data.current_hp) + "/" + str(_data.max_hp)
+
+func _initial_hp(_character:SACharacterBody2D):
+	_update_hp(_character.data, 0.0)
+	

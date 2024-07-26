@@ -27,6 +27,7 @@ func set_character(_value):
 	if _value is SAMainCharacter:
 		character = _value
 		if camera and character: connect_camera_remote(camera, character.camera_remote)
+		SASignals.CharacterInGamemode.emit(character)
 
 func connect_camera_remote(_camera, _remote:RemoteTransform2D):
 	_remote.set_remote_node(_camera.get_path())

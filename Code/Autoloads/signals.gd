@@ -4,6 +4,7 @@ signal IsPlaying(is_playing)
 signal WorldReady(world)
 
 signal CharacterReady(character)
+signal CharacterInGamemode(character)
 signal CharacterDead(data)
 signal CharacterNoMoreLive(characterData)
 signal PlayerDead()
