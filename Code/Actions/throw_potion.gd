@@ -51,6 +51,8 @@ func _process(_delta):
 			aim_line.hide()
 		if aim_direction != Vector2.ZERO and SAInput.action_7:
 			throw(aim_direction.normalized(), potions[selection])
+		elif aim_direction == Vector2.ZERO and SAInput.action_7 and potions[selection]["data"].element == GameMode.ELEMENT.HEAL:
+			throw(aim_direction.normalized(), potions[selection])
 		
 		if SAInput.action_5 and !toggle_pressed: selection = tab_selection(selection, true)
 		elif SAInput.action_8 and !toggle_pressed: selection = tab_selection(selection, false)
@@ -75,11 +77,15 @@ func aim() -> Vector2:
 
 func throw(_aim_direction:=Vector2.ZERO, _potion:Dictionary = {}):
 	if _potion.has("potion") and _potion["can_throw"]:
-		_potion["can_throw"] = false
-		var new_potion = _potion["potion"].instantiate()
-		GameMode.world.add_child(new_potion)
-		new_potion.global_position = global_position
-		new_potion.apply_central_impulse(_aim_direction.normalized() * get_final_throw_strength())
+		if _potion["data"].element != GameMode.ELEMENT.HEAL:
+			_potion["can_throw"] = false
+			var new_potion = _potion["potion"].instantiate()
+			GameMode.world.add_child(new_potion)
+			new_potion.global_position = global_position
+			new_potion.apply_central_impulse(_aim_direction.normalized() * get_final_throw_strength())
+		elif _potion["data"].element == GameMode.ELEMENT.HEAL:
+			_potion["can_throw"] = false
+			SASignals.HealCharacter.emit(GameMode.character, _potion["data"].heal_value)
 
 
 func _timer_timeout():

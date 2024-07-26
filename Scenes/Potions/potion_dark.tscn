@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://2gjscib27s0a"]
+[gd_scene load_steps=7 format=3 uid="uid://cir6jnqhvfpv3"]
 
-[ext_resource type="Script" path="res://Code/Potions/s_a_throwable_potion.gd" id="1_auu1l"]
-[ext_resource type="Texture2D" uid="uid://cne5afv1g3gw8" path="res://Textures/Potions/Selected/001_fire_potion.png" id="2_hcr4w"]
-[ext_resource type="Resource" uid="uid://eha0sejreqis" path="res://Data/Potions/fire_potion.tres" id="3_7gdji"]
-[ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="4_hnvxn"]
+[ext_resource type="Script" path="res://Code/Potions/s_a_throwable_potion.gd" id="1_1e7ad"]
+[ext_resource type="Resource" uid="uid://dmhbq0q68cw8y" path="res://Data/Potions/dark_potion.tres" id="2_qrnkt"]
+[ext_resource type="Texture2D" uid="uid://byohn7tfbbgrf" path="res://Textures/Potions/Selected/006_dark_potion.png" id="3_ksbi6"]
+[ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="4_sl3fs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tsppx"]
 radius = 4.0
@@ -11,16 +11,16 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ue3c3"]
 radius = 5.0
 
-[node name="FirePotion" type="RigidBody2D" groups=["potion"]]
+[node name="DarkPotion" type="RigidBody2D" groups=["potion"]]
 collision_layer = 8
 mass = 0.3
-script = ExtResource("1_auu1l")
-data = ExtResource("3_7gdji")
+script = ExtResource("1_1e7ad")
+data = ExtResource("2_qrnkt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -3)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_hcr4w")
+texture = ExtResource("3_ksbi6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -37,7 +37,7 @@ input_pickable = false
 shape = SubResource("CircleShape2D_ue3c3")
 
 [node name="light" type="PointLight2D" parent="."]
-color = Color(1, 0.560784, 0.376471, 1)
+color = Color(0.290196, 0.133333, 0.639216, 1)
 energy = 0.5
-texture = ExtResource("4_hnvxn")
+texture = ExtResource("4_sl3fs")
 texture_scale = 0.15

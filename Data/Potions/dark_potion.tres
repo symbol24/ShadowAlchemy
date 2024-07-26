@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=3 format=3 uid="uid://dmhbq0q68cw8y"]
+
+[ext_resource type="Resource" uid="uid://b1q5iipaskm7e" path="res://Data/UI/PotionIcons/potion_dark.tres" id="1_n0h5s"]
+[ext_resource type="Script" path="res://Code/Potions/potion_data.gd" id="2_u58xq"]
+
+[resource]
+script = ExtResource("2_u58xq")
+id = "dark_potion"
+potion_path = "res://Scenes/Potions/potion_dark.tscn"
+particle_path = ""
+particle_count = 0
+element = 1
+hit_fx_path = ""
+throw_delay = 1.0
+potion_icon = ExtResource("1_n0h5s")

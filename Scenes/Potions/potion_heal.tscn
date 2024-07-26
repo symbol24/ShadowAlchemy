@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://siuhoybdvx6s"]
+
+[ext_resource type="Script" path="res://Code/Potions/s_a_throwable_potion.gd" id="1_gbefh"]
+[ext_resource type="Resource" uid="uid://bh1l1kqudv7wf" path="res://Data/Potions/heal_potion.tres" id="2_p8gxr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsppx"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue3c3"]
+radius = 5.0
+
+[node name="HealPotion" type="RigidBody2D" groups=["potion"]]
+collision_layer = 8
+collision_mask = 0
+mass = 0.3
+script = ExtResource("1_gbefh")
+data = ExtResource("2_p8gxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_tsppx")
+disabled = true
+
+[node name="hit_detection" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 17
+input_pickable = false
+
+[node name="hit_collider" type="CollisionShape2D" parent="hit_detection"]
+visible = false
+shape = SubResource("CircleShape2D_ue3c3")

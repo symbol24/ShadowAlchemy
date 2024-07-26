@@ -1,6 +1,6 @@
 extends Node
 
-enum ELEMENT {LIGHT, DARK, FIRE, AIR, EARTH, WATER}
+enum ELEMENT {LIGHT, DARK, FIRE, AIR, EARTH, WATER, HEAL}
 
 var playing := true:
 	set(value):

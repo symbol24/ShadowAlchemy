@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="HitFxData" load_steps=2 format=3 uid="uid://dxlkea2qltllk"]
-
-[ext_resource type="Script" path="res://Code/FX/sa_potion_hit_fx_data.gd" id="1_h0qov"]
-
-[resource]
-script = ExtResource("1_h0qov")
-id = "test"
-damages = Array[Resource("res://Code/Utilities/damage.gd")]([])

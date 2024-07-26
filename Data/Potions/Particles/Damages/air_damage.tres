@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Damage" load_steps=3 format=3 uid="uid://co52sstrnt6tn"]
+
+[ext_resource type="Resource" uid="uid://cjwfhv4acdubq" path="res://Data/Characters/main_character.tres" id="1_87fp4"]
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="2_2htdk"]
+
+[resource]
+script = ExtResource("2_2htdk")
+damage_owner = ExtResource("1_87fp4")
+base_damage = 10.0
+elements = Array[int]([3])

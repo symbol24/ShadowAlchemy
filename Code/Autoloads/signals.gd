@@ -9,7 +9,7 @@ signal CharacterNoMoreLive(characterData)
 signal PlayerDead()
 signal HPUpdated(characterdata, change)
 signal MaxHPUpdated(characterdata, new_max)
-
+signal HealCharacter(character, value)
 signal CharacterGrounded(character)
 signal UpdateAnimation(character, animation)
 signal UpdateCharaterState(character, state)

@@ -61,7 +61,7 @@ func setup_starting_hp():
 	current_hp = base_hp
 	max_hp = base_hp
 
-func update_hp(_value := 0):
+func update_hp(_value := 0.0):
 	current_hp += _value
 
 func receive_damage(_damages:Array[Damage]):

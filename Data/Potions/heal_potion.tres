@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="HealPotionData" load_steps=3 format=3 uid="uid://bh1l1kqudv7wf"]
+
+[ext_resource type="Resource" uid="uid://odxudffv0bqs" path="res://Data/UI/PotionIcons/potion_heal.tres" id="1_s37jl"]
+[ext_resource type="Script" path="res://Code/Potions/heal_potion_data.gd" id="1_txrpa"]
+
+[resource]
+script = ExtResource("1_txrpa")
+heal_value = 0.4
+id = "heal"
+potion_path = "res://Scenes/Potions/potion_heal.tscn"
+particle_path = ""
+particle_count = 10
+element = 6
+hit_fx_path = ""
+throw_delay = 10.0
+potion_icon = ExtResource("1_s37jl")

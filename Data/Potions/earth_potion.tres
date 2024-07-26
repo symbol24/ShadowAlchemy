@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=3 format=3 uid="uid://fbxr1obe7wai"]
+
+[ext_resource type="Resource" uid="uid://c4qs4xv7qekg4" path="res://Data/UI/PotionIcons/potion_earth.tres" id="1_xrkn2"]
+[ext_resource type="Script" path="res://Code/Potions/potion_data.gd" id="2_614wj"]
+
+[resource]
+script = ExtResource("2_614wj")
+id = "earth_potion"
+potion_path = "res://Scenes/Potions/potion_earth.tscn"
+particle_path = ""
+particle_count = 0
+element = 4
+hit_fx_path = "res://Scenes/FX/hit_fx_earth.tscn"
+throw_delay = 1.0
+potion_icon = ExtResource("1_xrkn2")
