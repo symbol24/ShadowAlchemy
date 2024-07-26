@@ -13,7 +13,6 @@ func _process(_delta):
 	if GameMode.is_playing() and interactable:
 		if can_interact and SAInput.action_3:
 			can_interact = false
-			print("attempting to interact with", interactable.potion_data.id)
 			interactable.interact()
 		
 		if !can_interact:
