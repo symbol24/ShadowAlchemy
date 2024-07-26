@@ -21,6 +21,7 @@ var selection := 0:
 		SASignals.PotionSelectionChanged.emit(selection)
 
 func _ready():
+	SASignals.AddPotion.connect(_add_potion)
 	super._ready()
 	var to_use:Array[PackedScene] = []
 	if !use_const_preloads:
@@ -39,7 +40,7 @@ func _ready():
 			}
 		)
 		SASignals.AddPotion.emit(temp.data)
-		SASignals.PotionSelectionChanged.emit(selection)
+	SASignals.PotionSelectionChanged.emit(selection)
 
 func _process(_delta):
 	if SAOwner and GameMode.is_playing():
@@ -109,3 +110,16 @@ func tab_selection(_current := 0, _left := false) -> int:
 		new += 1
 		if new >= potions.size(): new = 0
 	return new
+
+func _add_potion(_new_potion:PotionData = null):
+	if _new_potion:
+		var loaded = load(_new_potion.potion_path)
+		potions.append(
+			{
+				"potion":loaded,
+				"data":_new_potion,
+				"can_throw":true,
+				"timer":0.0,
+				"delay":_new_potion.throw_delay
+			}
+		)

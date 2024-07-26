@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkgyvccw8nmrr"]
+[gd_scene load_steps=4 format=3 uid="uid://dkgyvccw8nmrr"]
 
 [ext_resource type="Script" path="res://Code/Actions/throw_potion.gd" id="1_fgnvp"]
+[ext_resource type="Material" uid="uid://bq4hbmirfu1sl" path="res://Data/UI/button_material/unshaded.tres" id="3_5ni4g"]
 [ext_resource type="Resource" uid="uid://bh1l1kqudv7wf" path="res://Data/Potions/heal_potion.tres" id="8_1f8vn"]
 
 [node name="ThrowPotion" type="Node2D"]
@@ -15,6 +16,7 @@ one_shot = true
 unique_name_in_owner = true
 visible = false
 z_index = 500
+material = ExtResource("3_5ni4g")
 points = PackedVector2Array(0, 0, 10, 0)
 width = 2.0
 default_color = Color(0.486275, 0.784314, 0.968627, 0.658824)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0stvl1hcxgxi"]
+
+[ext_resource type="Script" path="res://Code/UI/button_icon.gd" id="1_p1a22"]
+[ext_resource type="Material" uid="uid://bq4hbmirfu1sl" path="res://Data/UI/button_material/unshaded.tres" id="1_r1jt4"]
+[ext_resource type="Texture2D" uid="uid://m0sw0a7ib2ly" path="res://Textures/UI/buttons/tile_0650.png" id="2_vk3nd"]
+
+[node name="ButtonIcon" type="Node2D"]
+material = ExtResource("1_r1jt4")
+script = ExtResource("1_p1a22")
+action = 8
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_vk3nd")

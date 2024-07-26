@@ -1,13 +1,16 @@
-[gd_scene load_steps=49 format=3 uid="uid://xi5m14bnt4mo"]
+[gd_scene load_steps=52 format=3 uid="uid://xi5m14bnt4mo"]
 
 [ext_resource type="Script" path="res://Code/Utilities/hit_detection.gd" id="2_c0kea"]
 [ext_resource type="Script" path="res://Code/Character/s_a_main_character.gd" id="2_lm4qm"]
 [ext_resource type="Texture2D" uid="uid://b4anfu70pmfvo" path="res://Textures/AssetPack/Light/idle.png" id="3_3i1q3"]
 [ext_resource type="Resource" uid="uid://cjwfhv4acdubq" path="res://Data/Characters/main_character.tres" id="3_od2nr"]
 [ext_resource type="Texture2D" uid="uid://ba7dh1uaovvde" path="res://Textures/AssetPack/Light/idle_blink/idle_blink2.png" id="3_rsxsx"]
+[ext_resource type="Resource" uid="uid://bh1l1kqudv7wf" path="res://Data/Potions/heal_potion.tres" id="6_ggixb"]
 [ext_resource type="PackedScene" uid="uid://c58mpbqmx0766" path="res://Scenes/Actions/move.tscn" id="6_nl1t7"]
 [ext_resource type="PackedScene" uid="uid://v55mj1pxbia6" path="res://Scenes/Actions/jump.tscn" id="7_0t0bg"]
+[ext_resource type="Resource" uid="uid://eha0sejreqis" path="res://Data/Potions/fire_potion.tres" id="7_fu0ie"]
 [ext_resource type="PackedScene" uid="uid://dkgyvccw8nmrr" path="res://Scenes/Actions/throw_potion.tscn" id="7_lsr05"]
+[ext_resource type="PackedScene" uid="uid://klyk77hd3d1y" path="res://Scenes/Actions/interact.tscn" id="8_1di88"]
 [ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="9_arfeo"]
 [ext_resource type="Texture2D" uid="uid://cfdp341lh7d5f" path="res://Textures/AssetPack/Light/idle_blink/idle_blink0.png" id="9_ma7ne"]
 [ext_resource type="Texture2D" uid="uid://co8a7csyqhi2o" path="res://Textures/AssetPack/Light/idle_blink/idle_blink1.png" id="10_2qfi6"]
@@ -261,6 +264,10 @@ shape = SubResource("CapsuleShape2D_nsi66")
 
 [node name="ThrowPotion" parent="." instance=ExtResource("7_lsr05")]
 position = Vector2(0, -10)
+potion_datas = Array[Resource("res://Code/Potions/potion_data.gd")]([ExtResource("6_ggixb"), ExtResource("7_fu0ie")])
+
+[node name="Interact" parent="." instance=ExtResource("8_1di88")]
+visible = false
 
 [node name="Jump" parent="." instance=ExtResource("7_0t0bg")]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4mx24vjln6jc"]
+[gd_scene load_steps=8 format=3 uid="uid://b4mx24vjln6jc"]
 
 [ext_resource type="Script" path="res://Code/Potions/s_a_throwable_potion.gd" id="1_vyq3i"]
 [ext_resource type="Resource" uid="uid://cqkb2ico6y4wu" path="res://Data/Potions/air_potion.tres" id="2_xmhgu"]
 [ext_resource type="Texture2D" uid="uid://eyujl87atlvh" path="res://Textures/Potions/Selected/002_air_potion.png" id="3_sppna"]
 [ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="4_6j71j"]
+[ext_resource type="PackedScene" uid="uid://bio2yqlrq5os7" path="res://Scenes/UI/Button_icons/y.tscn" id="5_kdu8r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tsppx"]
 radius = 4.0
@@ -41,3 +42,7 @@ color = Color(1, 1, 0.584314, 1)
 energy = 0.5
 texture = ExtResource("4_6j71j")
 texture_scale = 0.15
+
+[node name="y" parent="." instance=ExtResource("5_kdu8r")]
+visible = false
+position = Vector2(0, -28)

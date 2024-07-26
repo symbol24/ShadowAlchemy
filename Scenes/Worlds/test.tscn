@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://burt8ytxhfm5t"]
+[gd_scene load_steps=35 format=3 uid="uid://burt8ytxhfm5t"]
 
 [ext_resource type="TileSet" uid="uid://bus3xfghoqlq2" path="res://Data/Tilesets/dungeon.tres" id="1_b32wh"]
 [ext_resource type="Script" path="res://Code/Utilities/TilemapCollisionBaker.gd" id="1_swrk1"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://xi5m14bnt4mo" path="res://Scenes/Character/main_character.tscn" id="3_fjv27"]
 [ext_resource type="PackedScene" uid="uid://bb4r86jso6ntg" path="res://Scenes/Utilities/s_a_camera.tscn" id="5_oawm8"]
 [ext_resource type="Texture2D" uid="uid://bt2bti6naf0to" path="res://Textures/black_sprite.png" id="6_t04ti"]
-[ext_resource type="PackedScene" uid="uid://kcprrkt1mpx4" path="res://Scenes/Enemies/skeleton_mage.tscn" id="7_u7otf"]
-[ext_resource type="PackedScene" uid="uid://beyeh677ydtfh" path="res://Scenes/Enemies/skeleton_warrior.tscn" id="8_ei037"]
+[ext_resource type="PackedScene" uid="uid://bbxp0o51k320k" path="res://Scenes/Pickups/pickup_potion_air.tscn" id="7_yhs58"]
+[ext_resource type="PackedScene" uid="uid://dkd0odd3mt3cx" path="res://Scenes/Pickups/pickup_potion_dark.tscn" id="8_22c8h"]
+[ext_resource type="PackedScene" uid="uid://idnrc0bl52j1" path="res://Scenes/Pickups/pickup_potion_earth.tscn" id="9_mnin7"]
+[ext_resource type="PackedScene" uid="uid://642uljx4qt55" path="res://Scenes/Pickups/pickup_potion_light.tscn" id="10_6gtvi"]
+[ext_resource type="PackedScene" uid="uid://cwgap76bh66px" path="res://Scenes/Pickups/pickup_potion_water.tscn" id="11_mw7di"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23u2y"]
 size = Vector2(64, 112)
@@ -207,11 +210,17 @@ material = SubResource("CanvasItemMaterial_dq1jc")
 scale = Vector2(6.74, 3.66)
 texture = ExtResource("6_t04ti")
 
-[node name="SkeletonMage" parent="." instance=ExtResource("7_u7otf")]
-position = Vector2(463, 256)
+[node name="Pickup" parent="." instance=ExtResource("7_yhs58")]
+position = Vector2(332, 243)
 
-[node name="SkeletonWarrior" parent="." instance=ExtResource("8_ei037")]
-position = Vector2(412, 256)
+[node name="Pickup2" parent="." instance=ExtResource("8_22c8h")]
+position = Vector2(368, 243)
 
-[node name="SkeletonWarrior2" parent="." instance=ExtResource("8_ei037")]
-position = Vector2(385, 256)
+[node name="Pickup3" parent="." instance=ExtResource("9_mnin7")]
+position = Vector2(396, 243)
+
+[node name="Pickup4" parent="." instance=ExtResource("10_6gtvi")]
+position = Vector2(423, 243)
+
+[node name="Pickup5" parent="." instance=ExtResource("11_mw7di")]
+position = Vector2(454, 244)

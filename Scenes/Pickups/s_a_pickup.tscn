@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://csfudcmrwtodo"]
+
+[ext_resource type="Script" path="res://Code/Pickups/s_a_pickup.gd" id="1_x8m6g"]
+
+[node name="Pickup" type="Area2D"]
+script = ExtResource("1_x8m6g")
+
+[node name="sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="fx_sprite" type="Sprite2D" parent="."]
+
+[node name="collider" type="CollisionShape2D" parent="."]
+
+[node name="light" type="PointLight2D" parent="."]
+
+[node name="animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../fx_sprite")

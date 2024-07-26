@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkd0odd3mt3cx"]
+
+[ext_resource type="Script" path="res://Code/Pickups/s_a_pickup.gd" id="1_h1mq1"]
+[ext_resource type="Resource" uid="uid://dmhbq0q68cw8y" path="res://Data/Potions/dark_potion.tres" id="2_xjo0e"]
+[ext_resource type="PackedScene" uid="uid://bio2yqlrq5os7" path="res://Scenes/UI/Button_icons/y.tscn" id="3_dcv1j"]
+[ext_resource type="Texture2D" uid="uid://byohn7tfbbgrf" path="res://Textures/Potions/Selected/006_dark_potion.png" id="3_ln1ee"]
+[ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="4_8j25l"]
+[ext_resource type="AnimationLibrary" uid="uid://xvcoptf30fgl" path="res://Data/Potions/PickupAnims/pickup.res" id="4_by5uj"]
+[ext_resource type="Texture2D" uid="uid://c0nadj26yc4vu" path="res://Textures/FX/pickup_fx.png" id="4_cxpii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7n7jl"]
+radius = 6.0
+
+[node name="Pickup" type="Area2D"]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_h1mq1")
+potion_data = ExtResource("2_xjo0e")
+
+[node name="sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ln1ee")
+
+[node name="fx_sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_cxpii")
+hframes = 5
+
+[node name="collider" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_7n7jl")
+
+[node name="light" type="PointLight2D" parent="."]
+color = Color(0.290196, 0.133333, 0.639216, 1)
+texture = ExtResource("4_8j25l")
+texture_scale = 0.25
+
+[node name="animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../fx_sprite")
+libraries = {
+"pickup": ExtResource("4_by5uj")
+}
+autoplay = "pickup/float"
+
+[node name="y" parent="." instance=ExtResource("3_dcv1j")]
+unique_name_in_owner = true
+visible = false
+z_index = 200
+position = Vector2(0, -22)

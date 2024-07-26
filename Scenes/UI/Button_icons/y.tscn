@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bio2yqlrq5os7"]
+
+[ext_resource type="Script" path="res://Code/UI/button_icon.gd" id="1_isopn"]
+[ext_resource type="Texture2D" uid="uid://d3vkwlyr2orl4" path="res://Textures/UI/buttons/tile_0007.png" id="2_bpwuu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5mdqp"]
+light_mode = 1
+
+[node name="ButtonIcon" type="Node2D"]
+script = ExtResource("1_isopn")
+action = 2
+
+[node name="sprite" type="Sprite2D" parent="."]
+light_mask = 0
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_5mdqp")
+texture = ExtResource("2_bpwuu")

@@ -1,7 +1,9 @@
 class_name SAThrowablePotion extends RigidBody2D
 
 @export var data:PotionData
+
 @onready var hit_detection:Area2D = %hit_detection
+@onready var y = %y
 
 var break_once := false
 var loaded = null
