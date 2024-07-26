@@ -12,6 +12,8 @@ func _ready():
 	name = potion_data.id + "_interactible"
 
 func interact():
+	y.hide()
+	SASignals.DisplaySmallPopup.emit(potion_data.popup_text)
 	SASignals.AddPotion.emit(potion_data)
 	animator.play("pickup/pickup")
 

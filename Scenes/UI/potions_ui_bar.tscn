@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://Code/UI/potions_ui.gd" id="1_r135m"]
 [ext_resource type="Texture2D" uid="uid://bcxkbyimvvrba" path="res://Textures/UI/GUI.png" id="2_bc7dl"]
 
-[node name="potions" type="Container"]
+[node name="potions" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,6 +17,11 @@ script = ExtResource("1_r135m")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 125.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
 texture = ExtResource("2_bc7dl")
 region_rect = Rect2(81.3529, 97.0819, 29.5936, 29.8638)
 patch_margin_left = 6

@@ -1,0 +1,201 @@
+[gd_scene load_steps=12 format=3 uid="uid://dpigygnk80amd"]
+
+[ext_resource type="Script" path="res://Code/Pickups/stone_pickup.gd" id="1_shc62"]
+[ext_resource type="Texture2D" uid="uid://hbkif3em4ycg" path="res://Textures/minerals/Icon16.png" id="2_ki56i"]
+[ext_resource type="PackedScene" uid="uid://bio2yqlrq5os7" path="res://Scenes/UI/Button_icons/y.tscn" id="3_g2nxv"]
+[ext_resource type="Texture2D" uid="uid://c0nadj26yc4vu" path="res://Textures/FX/pickup_fx.png" id="3_uaf4f"]
+[ext_resource type="Material" uid="uid://bq4hbmirfu1sl" path="res://Data/UI/button_material/unshaded.tres" id="4_juk7f"]
+[ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="5_ookrn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qad03"]
+radius = 13.0
+
+[sub_resource type="Animation" id="Animation_i0cwk"]
+resource_name = "float"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 2), Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fx_sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0vf8v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fx_sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fx_sprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_b0afm"]
+resource_name = "pickup"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fx_sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fx_sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_buheh"]
+_data = {
+"RESET": SubResource("Animation_0vf8v"),
+"float": SubResource("Animation_i0cwk"),
+"pickup": SubResource("Animation_b0afm")
+}
+
+[node name="StonePickup" type="Area2D"]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_shc62")
+
+[node name="sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_ki56i")
+
+[node name="fx_sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_uaf4f")
+hframes = 5
+
+[node name="collider" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_qad03")
+
+[node name="y" parent="." instance=ExtResource("3_g2nxv")]
+unique_name_in_owner = true
+visible = false
+z_index = 200
+material = ExtResource("4_juk7f")
+position = Vector2(0, -25)
+
+[node name="animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_buheh")
+}
+autoplay = "float"
+
+[node name="light" type="PointLight2D" parent="."]
+color = Color(1, 0.576471, 0.988235, 1)
+texture = ExtResource("5_ookrn")
+texture_scale = 0.5

@@ -1,0 +1,17 @@
+keys,en
+stone_pickup_popup,You have picked up the Philosopher Stone!
+potion_air_pickup,You have picked up the Air Element potion
+potion_earth_pickup,You have picked up the Earth Element potion
+potion_water_pickup,You have picked up the Water Element potion
+potion_light_pickup,You have picked up the Light potion
+potion_dark_pickup,You have picked up the Dark potion
+pause_title,Paused
+pause_aim_label,Aim potion throw
+pause_move_label,Move character
+pause_a_label,Jump
+pause_y_label,Interact
+pause_lb_label,Select next potion to the left
+pause_rb_label,Select next potion to the right
+pause_rt_label,Throw/Use Potion
+pause_start_label,Pause/Unpause
+pause_close_label,Close Screen

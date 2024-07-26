@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Code/UI/button_icon.gd" id="1_4qruw"]
 [ext_resource type="Texture2D" uid="uid://cs7kt7gplofi1" path="res://Textures/UI/buttons/tile_0588.png" id="2_1ddfn"]
 
-[node name="ButtonIcon" type="Node2D"]
+[node name="rb" type="Node2D"]
 material = ExtResource("1_4nx8t")
 script = ExtResource("1_4qruw")
 action = 7

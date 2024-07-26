@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://idnrc0bl52j1"]
+[gd_scene load_steps=10 format=3 uid="uid://idnrc0bl52j1"]
 
 [ext_resource type="Script" path="res://Code/Pickups/s_a_pickup.gd" id="1_y74ik"]
 [ext_resource type="Resource" uid="uid://fbxr1obe7wai" path="res://Data/Potions/earth_potion.tres" id="2_jfcsw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c0nadj26yc4vu" path="res://Textures/FX/pickup_fx.png" id="4_t78ur"]
 [ext_resource type="AnimationLibrary" uid="uid://xvcoptf30fgl" path="res://Data/Potions/PickupAnims/pickup.res" id="5_krm1b"]
 [ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="6_mvdd5"]
+[ext_resource type="Material" uid="uid://bq4hbmirfu1sl" path="res://Data/UI/button_material/unshaded.tres" id="7_owy24"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmgib"]
 radius = 7.0
@@ -44,6 +45,7 @@ autoplay = "pickup/float"
 unique_name_in_owner = true
 visible = false
 z_index = 200
+material = ExtResource("7_owy24")
 position = Vector2(0, -22)
 
 [node name="light" type="PointLight2D" parent="."]

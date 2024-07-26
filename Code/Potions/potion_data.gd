@@ -8,4 +8,5 @@ class_name PotionData extends Resource
 @export var hit_fx_path := ""
 @export var throw_delay := 1.0
 @export var potion_icon:PotionIconData
+@export var popup_text = tr("")
 

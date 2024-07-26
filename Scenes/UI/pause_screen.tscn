@@ -1,0 +1,410 @@
+[gd_scene load_steps=19 format=3 uid="uid://dqf1tyqrydood"]
+
+[ext_resource type="Script" path="res://Code/UI/pause_screen.gd" id="1_0mphk"]
+[ext_resource type="Texture2D" uid="uid://bcxkbyimvvrba" path="res://Textures/UI/GUI.png" id="2_52pwv"]
+[ext_resource type="Theme" uid="uid://cp26unuytwukt" path="res://Data/UI/Themes/pause_title.tres" id="3_etibs"]
+[ext_resource type="Material" uid="uid://bq4hbmirfu1sl" path="res://Data/UI/button_material/unshaded.tres" id="4_sefxy"]
+[ext_resource type="Texture2D" uid="uid://mxo6noh87eae" path="res://Textures/UI/controller_outline.png" id="5_ty7mj"]
+[ext_resource type="PackedScene" uid="uid://ctsjuiekmla2w" path="res://Scenes/UI/Button_icons/aim.tscn" id="6_ejqna"]
+[ext_resource type="PackedScene" uid="uid://cyglxptphdhyf" path="res://Scenes/UI/Button_icons/move.tscn" id="7_gq302"]
+[ext_resource type="PackedScene" uid="uid://d0stvl1hcxgxi" path="res://Scenes/UI/Button_icons/select.tscn" id="8_ww2dn"]
+[ext_resource type="PackedScene" uid="uid://dremtid36sdq1" path="res://Scenes/UI/Button_icons/start.tscn" id="9_dufcq"]
+[ext_resource type="PackedScene" uid="uid://da4x8h0tppxw8" path="res://Scenes/UI/Button_icons/lb.tscn" id="10_rb11y"]
+[ext_resource type="PackedScene" uid="uid://d00v8k5y473s0" path="res://Scenes/UI/Button_icons/lt.tscn" id="11_wc80e"]
+[ext_resource type="PackedScene" uid="uid://d2w2qilxlwstg" path="res://Scenes/UI/Button_icons/rb.tscn" id="12_0qsqd"]
+[ext_resource type="PackedScene" uid="uid://c5r6qshaaa3in" path="res://Scenes/UI/Button_icons/rt.tscn" id="13_i8ct1"]
+[ext_resource type="PackedScene" uid="uid://jd6gphkmw30k" path="res://Scenes/UI/Button_icons/b.tscn" id="14_ejhmx"]
+[ext_resource type="PackedScene" uid="uid://da2ve70atdvp1" path="res://Scenes/UI/Button_icons/x.tscn" id="15_i8a80"]
+[ext_resource type="PackedScene" uid="uid://bio2yqlrq5os7" path="res://Scenes/UI/Button_icons/y.tscn" id="16_nqytd"]
+[ext_resource type="PackedScene" uid="uid://c5qfd38fvmvai" path="res://Scenes/UI/Button_icons/a.tscn" id="17_l8k4f"]
+[ext_resource type="Theme" uid="uid://duqdmscxg7jxd" path="res://Data/UI/Themes/pause_labels.tres" id="18_50gyp"]
+
+[node name="PauseScreen" type="Control"]
+process_mode = 3
+visible = false
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0mphk")
+
+[node name="pause_background_nine" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 40.0
+offset_right = 235.0
+offset_bottom = 140.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Pause_title" type="Label" parent="."]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 0
+offset_left = 110.0
+offset_top = 43.0
+offset_right = 170.0
+offset_bottom = 50.0
+scale = Vector2(1.6, 1.6)
+theme = ExtResource("3_etibs")
+text = "pause_title"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="controller" type="Sprite2D" parent="."]
+material = ExtResource("4_sefxy")
+position = Vector2(160, 97)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("5_ty7mj")
+
+[node name="buttons" type="Control" parent="."]
+custom_minimum_size = Vector2(320, 180)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="aim" parent="buttons" instance=ExtResource("6_ejqna")]
+position = Vector2(167, 96)
+scale = Vector2(0.8, 0.8)
+
+[node name="move" parent="buttons" instance=ExtResource("7_gq302")]
+position = Vector2(137, 85)
+scale = Vector2(0.8, 0.8)
+
+[node name="select" parent="buttons" instance=ExtResource("8_ww2dn")]
+modulate = Color(1, 1, 1, 0.27451)
+position = Vector2(153, 86)
+scale = Vector2(0.4, 0.4)
+
+[node name="start" parent="buttons" instance=ExtResource("9_dufcq")]
+position = Vector2(162, 86)
+scale = Vector2(0.4, 0.4)
+
+[node name="lb" parent="buttons" instance=ExtResource("10_rb11y")]
+position = Vector2(139, 70)
+scale = Vector2(0.5, 0.5)
+
+[node name="lt" parent="buttons" instance=ExtResource("11_wc80e")]
+modulate = Color(1, 1, 1, 0.27451)
+position = Vector2(127, 73)
+scale = Vector2(0.5, 0.5)
+
+[node name="rb" parent="buttons" instance=ExtResource("12_0qsqd")]
+position = Vector2(177, 70)
+scale = Vector2(0.5, 0.5)
+
+[node name="rt" parent="buttons" instance=ExtResource("13_i8ct1")]
+position = Vector2(189, 73)
+scale = Vector2(0.5, 0.5)
+
+[node name="b" parent="buttons" instance=ExtResource("14_ejhmx")]
+modulate = Color(1, 1, 1, 0.27451)
+position = Vector2(186, 92)
+scale = Vector2(0.4, 0.4)
+
+[node name="x" parent="buttons" instance=ExtResource("15_i8a80")]
+modulate = Color(1, 1, 1, 0.27451)
+position = Vector2(176, 92)
+scale = Vector2(0.4, 0.4)
+
+[node name="y" parent="buttons" instance=ExtResource("16_nqytd")]
+position = Vector2(181, 87)
+scale = Vector2(0.4, 0.4)
+
+[node name="a" parent="buttons" instance=ExtResource("17_l8k4f")]
+position = Vector2(181, 97)
+scale = Vector2(0.4, 0.4)
+
+[node name="boxes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="label_background_nine" type="NinePatchRect" parent="boxes"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 76.0
+offset_right = 128.0
+offset_bottom = 83.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="label_background_nine2" type="NinePatchRect" parent="boxes"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 114.0
+offset_top = 127.0
+offset_right = 154.0
+offset_bottom = 134.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="label_background_nine3" type="NinePatchRect" parent="boxes"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 162.0
+offset_top = 127.0
+offset_right = 202.0
+offset_bottom = 134.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="label_background_nine4" type="NinePatchRect" parent="boxes"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 199.0
+offset_top = 103.0
+offset_right = 232.0
+offset_bottom = 110.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="label_background_nine5" type="NinePatchRect" parent="boxes"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 89.0
+offset_top = 56.0
+offset_right = 145.0
+offset_bottom = 63.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="label_background_nine6" type="NinePatchRect" parent="boxes"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 171.0
+offset_top = 56.0
+offset_right = 232.0
+offset_bottom = 63.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="label_background_nine7" type="NinePatchRect" parent="boxes"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 77.0
+offset_right = 231.0
+offset_bottom = 84.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="label_background_nine8" type="NinePatchRect" parent="boxes"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 195.0
+offset_top = 90.0
+offset_right = 228.0
+offset_bottom = 97.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Labels" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+metadata/_edit_lock_ = true
+
+[node name="pause_aim_label" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 129.0
+offset_right = 286.0
+offset_bottom = 139.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_aim_label"
+
+[node name="pause_move_label" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 78.0
+offset_right = 212.0
+offset_bottom = 88.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_move_label"
+
+[node name="pause_a_label" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 105.0
+offset_right = 323.0
+offset_bottom = 115.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_a_label"
+
+[node name="pause_y_label" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 92.0
+offset_right = 319.0
+offset_bottom = 102.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_y_label"
+
+[node name="pause_lb_label" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 58.0
+offset_right = 213.0
+offset_bottom = 68.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_lb_label"
+
+[node name="pause_rb_label" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 58.0
+offset_right = 295.0
+offset_bottom = 68.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_rb_label"
+
+[node name="pause_rt_label" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 79.0
+offset_right = 315.0
+offset_bottom = 89.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_rt_label"
+
+[node name="pause_start_label" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 129.0
+offset_right = 238.0
+offset_bottom = 139.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_start_label"
+
+[node name="lines" type="Control" parent="."]
+custom_minimum_size = Vector2(320, 180)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="line" type="Line2D" parent="lines"]
+position = Vector2(32, 12)
+points = PackedVector2Array(102, 73, 72, 73, 72, 71)
+width = 1.0
+default_color = Color(0.368627, 0.470588, 0.588235, 1)
+
+[node name="line2" type="Line2D" parent="lines"]
+position = Vector2(37, -8)
+points = PackedVector2Array(102, 75, 102, 73, 72, 73, 72, 71)
+width = 1.0
+default_color = Color(0.368627, 0.470588, 0.588235, 1)
+
+[node name="line3" type="Line2D" parent="lines"]
+position = Vector2(104, -8)
+points = PackedVector2Array(102, 71, 102, 73, 72, 73, 72, 75)
+width = 1.0
+default_color = Color(0.368627, 0.470588, 0.588235, 1)
+
+[node name="line4" type="Line2D" parent="lines"]
+position = Vector2(120, 0)
+points = PackedVector2Array(92, 77, 92, 73, 72, 73)
+width = 1.0
+default_color = Color(0.368627, 0.470588, 0.588235, 1)
+
+[node name="line5" type="Line2D" parent="lines"]
+position = Vector2(111, 14)
+points = PackedVector2Array(92, 77, 92, 73, 72, 73)
+width = 1.0
+default_color = Color(0.368627, 0.470588, 0.588235, 1)
+
+[node name="line6" type="Line2D" parent="lines"]
+position = Vector2(111, 24)
+points = PackedVector2Array(99, 79, 99, 76, 77, 76, 77, 73, 72, 73)
+width = 1.0
+default_color = Color(0.368627, 0.470588, 0.588235, 1)
+
+[node name="line7" type="Line2D" parent="lines"]
+position = Vector2(95, 28)
+points = PackedVector2Array(84, 99, 84, 91, 72, 91, 72, 73)
+width = 1.0
+default_color = Color(0.368627, 0.470588, 0.588235, 1)
+
+[node name="line8" type="Line2D" parent="lines"]
+position = Vector2(88, 13)
+points = PackedVector2Array(44, 114, 44, 110, 70, 110, 70, 73, 72, 73)
+width = 1.0
+default_color = Color(0.368627, 0.470588, 0.588235, 1)
+
+[node name="background_nine_rect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(40, 13)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 140.0
+offset_right = 235.0
+offset_bottom = 153.0
+texture = ExtResource("2_52pwv")
+region_rect = Rect2(81.3529, 97.0819, 29.5936, 29.8638)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="b2" parent="." instance=ExtResource("14_ejhmx")]
+position = Vector2(200, 147)
+scale = Vector2(0.4, 0.4)
+
+[node name="pause_a_label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 145.0
+offset_right = 327.0
+offset_bottom = 155.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("18_50gyp")
+text = "pause_close_label"

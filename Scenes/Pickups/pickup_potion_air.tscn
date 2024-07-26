@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbxp0o51k320k"]
+[gd_scene load_steps=10 format=3 uid="uid://bbxp0o51k320k"]
 
 [ext_resource type="Script" path="res://Code/Pickups/s_a_pickup.gd" id="1_1706v"]
 [ext_resource type="Texture2D" uid="uid://eyujl87atlvh" path="res://Textures/Potions/Selected/002_air_potion.png" id="2_bo5l0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b30ap8i8a2ip1" path="res://Textures/2d_lights_and_shadows_neutral_point_light.webp" id="3_pusjy"]
 [ext_resource type="AnimationLibrary" uid="uid://xvcoptf30fgl" path="res://Data/Potions/PickupAnims/pickup.res" id="6_gjiw1"]
 [ext_resource type="PackedScene" uid="uid://bio2yqlrq5os7" path="res://Scenes/UI/Button_icons/y.tscn" id="6_pcurw"]
+[ext_resource type="Material" uid="uid://bq4hbmirfu1sl" path="res://Data/UI/button_material/unshaded.tres" id="8_ksipy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wvwn"]
 
@@ -48,4 +49,5 @@ autoplay = "pickup/float"
 unique_name_in_owner = true
 visible = false
 z_index = 200
+material = ExtResource("8_ksipy")
 position = Vector2(0, -22)

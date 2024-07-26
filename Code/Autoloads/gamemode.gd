@@ -14,6 +14,7 @@ var character:SAMainCharacter = null
 func _ready():
 	SASignals.WorldReady.connect(set_world)
 	SASignals.CharacterReady.connect(set_character)
+	SASignals.PauseGame.connect(toggle_pause)
 
 func is_playing() -> bool:
 	return playing
@@ -45,3 +46,7 @@ func check_elements(_to_check:GameMode.ELEMENT, _elements:Array[GameMode.ELEMENT
 			GameMode.ELEMENT.FIRE:
 				if _to_check == GameMode.ELEMENT.AIR: found = true
 	return found
+
+func toggle_pause(_value := false):
+	playing = !_value
+	get_tree().set_pause(_value)

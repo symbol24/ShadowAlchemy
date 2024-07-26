@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://chj4ay27aiy7n"]
+
+[ext_resource type="Script" path="res://Code/UI/popup.gd" id="1_4fqb8"]
+[ext_resource type="Texture2D" uid="uid://bcxkbyimvvrba" path="res://Textures/UI/GUI.png" id="2_re6hm"]
+[ext_resource type="Theme" uid="uid://dxh37brn4wyb3" path="res://Data/UI/Themes/popup_description_theme.tres" id="3_eg2rd"]
+
+[node name="Popup" type="Control"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_4fqb8")
+
+[node name="popup_background_nine" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 110.0
+offset_top = 44.0
+offset_right = 210.0
+offset_bottom = 84.0
+texture = ExtResource("2_re6hm")
+region_rect = Rect2(145, 65, 46, 14)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="message" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 113.0
+offset_top = 47.0
+offset_right = 204.0
+offset_bottom = 81.0
+theme = ExtResource("3_eg2rd")
+text = "popup_message"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="display_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true

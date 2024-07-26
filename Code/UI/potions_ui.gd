@@ -1,4 +1,4 @@
-extends Container
+extends Control
 
 const POTION_BOX = preload("res://Scenes/UI/potion_box.tscn")
 
@@ -28,7 +28,7 @@ func _add_potion(_potion:PotionData):
 	boxs.append(new_box)
 	
 	background_nine_rect.size.x = (width * potions.size()) + spacer
-	position.x = 160 - (background_nine_rect.size.x/2)
+	background_nine_rect.position.x = 160 - (background_nine_rect.size.x/2)
 
 func _update_selection(_value:=0):
 	var x = 0

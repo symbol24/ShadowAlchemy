@@ -19,8 +19,12 @@ signal CharacterJumping(jumping)
 signal PotionTimerUpdate(potion, timer)
 signal PotionSelectionChanged(selection)
 signal AddPotion(data)
+signal AddStone()
 
 signal EnemyAttack(enemy)
 signal EnemyAttackOver(enemy)
 signal MageShoot(enemy)
 
+signal DisplaySmallPopup(text)
+signal PauseGame(pause)
+signal FocusedOnUi(is_focused)

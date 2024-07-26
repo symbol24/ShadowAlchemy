@@ -13,3 +13,4 @@ element = 0
 hit_fx_path = ""
 throw_delay = 5.0
 potion_icon = ExtResource("1_r820d")
+popup_text = "potion_light_pickup"

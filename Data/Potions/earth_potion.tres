@@ -13,3 +13,4 @@ element = 4
 hit_fx_path = "res://Scenes/FX/hit_fx_earth.tscn"
 throw_delay = 1.0
 potion_icon = ExtResource("1_xrkn2")
+popup_text = "potion_earth_pickup"

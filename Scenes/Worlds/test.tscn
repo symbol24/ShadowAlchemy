@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://642uljx4qt55" path="res://Scenes/Pickups/pickup_potion_light.tscn" id="10_6gtvi"]
 [ext_resource type="PackedScene" uid="uid://cwgap76bh66px" path="res://Scenes/Pickups/pickup_potion_water.tscn" id="11_mw7di"]
 [ext_resource type="PackedScene" uid="uid://cyvhx1bkfy7bt" path="res://Scenes/Worlds/background_items/merky_light.tscn" id="12_khkrp"]
-[ext_resource type="PackedScene" uid="uid://beyeh677ydtfh" path="res://Scenes/Enemies/skeleton_warrior.tscn" id="13_ysevc"]
+[ext_resource type="PackedScene" uid="uid://dpigygnk80amd" path="res://Scenes/Pickups/stone_pickup.tscn" id="13_gfd0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8ch4"]
 size = Vector2(64, 112)
@@ -233,5 +233,5 @@ position = Vector2(660, 237)
 [node name="Pickup5" parent="." instance=ExtResource("11_mw7di")]
 position = Vector2(691, 238)
 
-[node name="SkeletonWarrior" parent="." instance=ExtResource("13_ysevc")]
-position = Vector2(385, 256)
+[node name="StonePickup" parent="." instance=ExtResource("13_gfd0r")]
+position = Vector2(340, 233)

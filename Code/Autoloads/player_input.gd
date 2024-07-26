@@ -41,7 +41,7 @@ var any_input := false
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	#Signals.FocusedOnUi.connect(toggle_focus)
+	SASignals.FocusedOnUi.connect(toggle_focus)
 	#Signals.TogglePlayerInput.connect(toggle_player_input)
 
 func _process(_delta):
@@ -85,8 +85,8 @@ func listen_to_ui_inputs():
 	ui_select = Input.is_action_just_pressed("ui_select")
 	ui_tab_left = Input.get_action_strength("ui_tab_left")
 	ui_tab_right = Input.get_action_strength("ui_tab_right")
-	ui_y = Input.get_action_strength("ui_y")
-	ui_x = Input.get_action_strength("ui_x")
+	#ui_y = Input.get_action_strength("ui_y")
+	#ui_x = Input.get_action_strength("ui_x")
 
 func reset_values():
 	move_left_right = 0
