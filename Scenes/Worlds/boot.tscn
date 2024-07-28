@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgob1hleqso35"]
+
+[ext_resource type="Script" path="res://Code/Worlds/boot.gd" id="1_j8mox"]
+[ext_resource type="Texture2D" uid="uid://c2fs43r7faxfc" path="res://Textures/UI/boot_back.png" id="2_60t1h"]
+[ext_resource type="Texture2D" uid="uid://cq31uh111wyhn" path="res://Textures/UI/godot_splash.png" id="2_cf0kk"]
+[ext_resource type="Texture2D" uid="uid://4dq3by14wfuo" path="res://Textures/UI/rid_back.png" id="3_ch3mv"]
+[ext_resource type="Texture2D" uid="uid://jj1ynat7jwau" path="res://Textures/UI/rid_glasses_mustache.png" id="4_hm7aw"]
+[ext_resource type="Theme" uid="uid://ctrk6dlbsfxmo" path="res://Data/UI/Themes/company_logo_theme.tres" id="6_ltskj"]
+
+[node name="boot" type="Node2D"]
+script = ExtResource("1_j8mox")
+
+[node name="back" type="Sprite2D" parent="."]
+texture = ExtResource("2_60t1h")
+centered = false
+
+[node name="godot" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("2_cf0kk")
+centered = false
+
+[node name="rid" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="rid_back" type="Sprite2D" parent="rid"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("3_ch3mv")
+centered = false
+
+[node name="rid_glasses" type="Sprite2D" parent="rid"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("4_hm7aw")
+centered = false
+
+[node name="company" type="Label" parent="rid"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 0)
+offset_left = 60.0
+offset_top = 137.0
+offset_right = 260.0
+offset_bottom = 166.0
+theme = ExtResource("6_ltskj")
+text = "company_name"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

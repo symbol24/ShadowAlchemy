@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqlvxeyduofom"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Loading_screen.gd" id="1_736v1"]
+[ext_resource type="Texture2D" uid="uid://hbkif3em4ycg" path="res://Textures/minerals/Icon16.png" id="2_sfisn"]
+[ext_resource type="Theme" uid="uid://cgv3evwt7irih" path="res://Data/UI/Themes/loading.tres" id="3_wcxgx"]
+
+[sub_resource type="Animation" id="Animation_nram0"]
+resource_name = "loop"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("stone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(280, 140), Vector2(280, 141), Vector2(280, 140), Vector2(280, 139), Vector2(280, 140)]
+}
+
+[sub_resource type="Animation" id="Animation_nwjvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("stone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(280, 140)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_71vee"]
+_data = {
+"RESET": SubResource("Animation_nwjvc"),
+"loop": SubResource("Animation_nram0")
+}
+
+[node name="Loading" type="Control"]
+process_mode = 3
+visible = false
+custom_minimum_size = Vector2(320, 176)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_736v1")
+
+[node name="background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(320, 176)
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 176.0
+color = Color(0.0941176, 0.0901961, 0.12549, 1)
+
+[node name="stone" type="Sprite2D" parent="."]
+position = Vector2(280, 140)
+texture = ExtResource("2_sfisn")
+
+[node name="loading_label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 232.0
+offset_top = 139.0
+offset_right = 260.0
+offset_bottom = 146.0
+theme = ExtResource("3_wcxgx")
+text = "Loading"
+
+[node name="animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_71vee")
+}

@@ -1,0 +1,389 @@
+[gd_scene load_steps=15 format=3 uid="uid://bx7g6safrq11l"]
+
+[ext_resource type="Script" path="res://Code/Worlds/main_menu.gd" id="1_msyxd"]
+[ext_resource type="Resource" uid="uid://b2hm85q5h6ocf" path="res://Data/Worlds/main_menu.tres" id="2_h4tyq"]
+[ext_resource type="TileSet" uid="uid://bus3xfghoqlq2" path="res://Data/Tilesets/dungeon.tres" id="3_l26wo"]
+[ext_resource type="Theme" uid="uid://ms7x4ovkkc0f" path="res://Data/UI/Themes/main_menu_theme.tres" id="4_e0bgv"]
+[ext_resource type="Texture2D" uid="uid://bcxkbyimvvrba" path="res://Textures/UI/GUI.png" id="5_4h3pj"]
+[ext_resource type="Texture2D" uid="uid://q4gw4ugx0lp" path="res://Textures/UI/button_up.png" id="6_mtlmb"]
+[ext_resource type="Texture2D" uid="uid://bwh8i45pyxowf" path="res://Textures/UI/button_down.png" id="7_ywd2w"]
+[ext_resource type="Texture2D" uid="uid://bxy5xb6twl445" path="res://Textures/UI/button_over.png" id="8_1esdk"]
+[ext_resource type="Theme" uid="uid://c53yfdo2731ry" path="res://Data/UI/Themes/button_theme.tres" id="9_h5eai"]
+[ext_resource type="Theme" uid="uid://cpmng0lxce2q2" path="res://Data/UI/Themes/credits_title.tres" id="9_pgh5m"]
+[ext_resource type="Theme" uid="uid://dul86n7ox38hs" path="res://Data/UI/Themes/credits_company.tres" id="9_y2561"]
+[ext_resource type="Theme" uid="uid://bp5awfhnatcyu" path="res://Data/UI/Themes/credits_entry.tres" id="10_eysxd"]
+[ext_resource type="PackedScene" uid="uid://jd6gphkmw30k" path="res://Scenes/UI/Button_icons/b.tscn" id="11_x4me4"]
+[ext_resource type="Theme" uid="uid://dimwmh806vo21" path="res://Data/UI/Themes/credits_back_label.tres" id="12_ovhd7"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_msyxd")
+data = ExtResource("2_h4tyq")
+
+[node name="background" type="TileMap" parent="."]
+position = Vector2(0, 8)
+tile_set = ExtResource("3_l26wo")
+format = 2
+layer_0/tile_data = PackedInt32Array(655379, 196609, 3, 589843, 196609, 2, 524307, 196609, 2, 458771, 196609, 2, 393235, 196609, 2, 327699, 196609, 2, 262163, 196609, 2, 196627, 196609, 2, 131091, 196609, 2, 65555, 196609, 2, 19, 196609, 2, 655378, 131073, 3, 589842, 131073, 2, 524306, 131073, 2, 458770, 131073, 2, 393234, 131073, 2, 327698, 131073, 2, 262162, 131073, 2, 196626, 131073, 2, 131090, 131073, 2, 65554, 131073, 2, 18, 131073, 2, 655377, 131073, 3, 589841, 131073, 2, 524305, 131073, 2, 458769, 131073, 2, 393233, 131073, 2, 327697, 131073, 2, 262161, 131073, 2, 196625, 131073, 2, 131089, 131073, 2, 65553, 131073, 2, 17, 131073, 2, 655376, 131073, 3, 589840, 131073, 2, 524304, 131073, 2, 458768, 131073, 2, 393232, 131073, 2, 327696, 131073, 2, 262160, 131073, 2, 196624, 131073, 2, 131088, 131073, 2, 65552, 131073, 2, 16, 131073, 2, 655375, 131073, 3, 589839, 131073, 2, 524303, 131073, 2, 458767, 131073, 2, 393231, 131073, 2, 327695, 131073, 2, 262159, 131073, 2, 196623, 131073, 2, 131087, 131073, 2, 65551, 131073, 2, 15, 131073, 2, 655374, 131073, 3, 589838, 131073, 2, 524302, 131073, 2, 458766, 131073, 2, 393230, 131073, 2, 327694, 131073, 2, 262158, 131073, 2, 196622, 131073, 2, 131086, 131073, 2, 65550, 131073, 2, 14, 131073, 2, 655373, 131073, 3, 589837, 131073, 2, 524301, 131073, 2, 458765, 131073, 2, 393229, 131073, 2, 327693, 131073, 2, 262157, 131073, 2, 196621, 131073, 2, 131085, 131073, 2, 65549, 131073, 2, 13, 131073, 2, 655372, 131073, 3, 589836, 131073, 2, 524300, 131073, 2, 458764, 131073, 2, 393228, 131073, 2, 327692, 131073, 2, 262156, 131073, 2, 196620, 131073, 2, 131084, 131073, 2, 65548, 131073, 2, 12, 131073, 2, 655371, 131073, 3, 589835, 131073, 2, 524299, 131073, 2, 458763, 131073, 2, 393227, 131073, 2, 327691, 131073, 2, 262155, 131073, 2, 196619, 131073, 2, 131083, 131073, 2, 65547, 131073, 2, 11, 131073, 2, 655370, 131073, 3, 589834, 131073, 2, 524298, 131073, 2, 458762, 131073, 2, 393226, 131073, 2, 327690, 131073, 2, 262154, 131073, 2, 196618, 131073, 2, 131082, 131073, 2, 65546, 131073, 2, 10, 131073, 2, 655369, 131073, 3, 589833, 131073, 2, 524297, 131073, 2, 458761, 131073, 2, 393225, 131073, 2, 327689, 131073, 2, 262153, 131073, 2, 196617, 131073, 2, 131081, 131073, 2, 65545, 131073, 2, 9, 131073, 2, 655368, 131073, 3, 589832, 131073, 2, 524296, 131073, 2, 458760, 131073, 2, 393224, 131073, 2, 327688, 131073, 2, 262152, 131073, 2, 196616, 131073, 2, 131080, 131073, 2, 65544, 131073, 2, 8, 131073, 2, 655367, 131073, 3, 589831, 131073, 2, 524295, 131073, 2, 458759, 131073, 2, 393223, 131073, 2, 327687, 131073, 2, 262151, 131073, 2, 196615, 131073, 2, 131079, 131073, 2, 65543, 131073, 2, 7, 131073, 2, 655366, 131073, 3, 589830, 131073, 2, 524294, 131073, 2, 458758, 131073, 2, 393222, 131073, 2, 327686, 131073, 2, 262150, 131073, 2, 196614, 131073, 2, 131078, 131073, 2, 65542, 131073, 2, 6, 131073, 2, 655365, 131073, 3, 589829, 131073, 2, 524293, 131073, 2, 458757, 131073, 2, 393221, 131073, 2, 327685, 131073, 2, 262149, 131073, 2, 196613, 131073, 2, 131077, 131073, 2, 65541, 131073, 2, 5, 131073, 2, 655364, 131073, 3, 589828, 131073, 2, 524292, 131073, 2, 458756, 131073, 2, 393220, 131073, 2, 327684, 131073, 2, 262148, 131073, 2, 196612, 131073, 2, 131076, 131073, 2, 65540, 131073, 2, 4, 131073, 2, 655363, 131073, 3, 589827, 131073, 2, 524291, 131073, 2, 458755, 131073, 2, 393219, 131073, 2, 327683, 131073, 2, 262147, 131073, 2, 196611, 131073, 2, 131075, 131073, 2, 65539, 131073, 2, 3, 131073, 2, 655362, 131073, 3, 589826, 131073, 2, 524290, 131073, 2, 458754, 131073, 2, 393218, 131073, 2, 327682, 131073, 2, 262146, 131073, 2, 196610, 131073, 2, 131074, 131073, 2, 65538, 131073, 2, 2, 131073, 2, 655361, 131073, 3, 589825, 131073, 2, 524289, 131073, 2, 458753, 131073, 2, 393217, 131073, 2, 327681, 131073, 2, 262145, 131073, 2, 196609, 131073, 2, 131073, 131073, 2, 65537, 131073, 2, 1, 131073, 2, 655360, 65537, 3, 589824, 65537, 2, 524288, 65537, 2, 458752, 65537, 2, 393216, 65537, 2, 327680, 65537, 2, 262144, 65537, 2, 196608, 65537, 2, 131072, 65537, 2, 65536, 65537, 2, 0, 65537, 2, -65517, 196609, 1, -65518, 131073, 1, -65519, 131073, 1, -65520, 131073, 1, -65521, 131073, 1, -65522, 131073, 1, -65523, 131073, 1, -65524, 131073, 1, -65525, 131073, 1, -65526, 131073, 1, -65527, 131073, 1, -65528, 131073, 1, -65529, 131073, 1, -65530, 131073, 1, -65531, 131073, 1, -65532, 131073, 1, -65533, 131073, 1, -65534, 131073, 1, -65535, 131073, 1, -65536, 65537, 1)
+
+[node name="MMControl" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="title" type="Label" parent="MMControl"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 23.0
+offset_right = 260.0
+offset_bottom = 53.0
+theme = ExtResource("4_e0bgv")
+text = "title"
+horizontal_alignment = 1
+
+[node name="menu_back" type="NinePatchRect" parent="MMControl"]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 77.0
+offset_right = 200.0
+offset_bottom = 137.0
+texture = ExtResource("5_4h3pj")
+region_rect = Rect2(2, 34, 44, 44)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13
+
+[node name="play_button" type="TextureButton" parent="MMControl/menu_back"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 28.0
+focus_neighbor_top = NodePath("../credits_button")
+focus_neighbor_bottom = NodePath("../credits_button")
+texture_normal = ExtResource("6_mtlmb")
+texture_pressed = ExtResource("7_ywd2w")
+texture_focused = ExtResource("8_1esdk")
+
+[node name="bttn_label" type="Label" parent="MMControl/menu_back/play_button"]
+custom_minimum_size = Vector2(48, 16)
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 15.0
+theme = ExtResource("9_h5eai")
+text = "play_label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="credits_button" type="TextureButton" parent="MMControl/menu_back"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 34.0
+offset_right = 64.0
+offset_bottom = 50.0
+focus_neighbor_top = NodePath("../play_button")
+focus_neighbor_bottom = NodePath("../play_button")
+texture_normal = ExtResource("6_mtlmb")
+texture_pressed = ExtResource("7_ywd2w")
+texture_focused = ExtResource("8_1esdk")
+
+[node name="bttn_label" type="Label" parent="MMControl/menu_back/credits_button"]
+custom_minimum_size = Vector2(48, 16)
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 15.0
+theme = ExtResource("9_h5eai")
+text = "credit_label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="scroll" type="ScrollContainer" parent="Credits"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 155)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 160.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="vbox" type="VBoxContainer" parent="Credits/scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="title" type="Label" parent="Credits/scroll/vbox"]
+layout_mode = 2
+theme = ExtResource("4_e0bgv")
+text = "title"
+horizontal_alignment = 1
+
+[node name="spacer" type="Control" parent="Credits/scroll/vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="company" type="Label" parent="Credits/scroll/vbox"]
+layout_mode = 2
+theme = ExtResource("9_y2561")
+text = "company_name"
+horizontal_alignment = 1
+
+[node name="spacer2" type="Control" parent="Credits/scroll/vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="title2" type="Label" parent="Credits/scroll/vbox"]
+layout_mode = 2
+theme = ExtResource("9_pgh5m")
+text = "credits_title_1"
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="Credits/scroll/vbox"]
+layout_mode = 2
+theme = ExtResource("10_eysxd")
+text = "Symbol24"
+horizontal_alignment = 1
+
+[node name="spacer3" type="Control" parent="Credits/scroll/vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="title3" type="Label" parent="Credits/scroll/vbox"]
+layout_mode = 2
+theme = ExtResource("9_pgh5m")
+text = "credits_title_art"
+horizontal_alignment = 1
+
+[node name="grid_art" type="GridContainer" parent="Credits/scroll/vbox"]
+layout_mode = 2
+columns = 5
+
+[node name="Control" type="Control" parent="Credits/scroll/vbox/grid_art"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="name2" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Symbol24"
+horizontal_alignment = 1
+
+[node name="name3" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Craftpix.net"
+horizontal_alignment = 1
+
+[node name="name4" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "999overlap"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Credits/scroll/vbox/grid_art"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="Credits/scroll/vbox/grid_art"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="name5" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Stealthix"
+horizontal_alignment = 1
+
+[node name="name6" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "BDragon1727"
+horizontal_alignment = 1
+
+[node name="name7" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Mounir Tohami"
+horizontal_alignment = 1
+
+[node name="Control4" type="Control" parent="Credits/scroll/vbox/grid_art"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="Credits/scroll/vbox/grid_art"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="name8" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Admurin"
+horizontal_alignment = 1
+
+[node name="name9" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "pimen"
+horizontal_alignment = 1
+
+[node name="name10" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Thomas Lean"
+horizontal_alignment = 1
+
+[node name="Control6" type="Control" parent="Credits/scroll/vbox/grid_art"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="Control7" type="Control" parent="Credits/scroll/vbox/grid_art"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="name11" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "David G"
+horizontal_alignment = 1
+
+[node name="name12" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+horizontal_alignment = 1
+
+[node name="name13" type="Label" parent="Credits/scroll/vbox/grid_art"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+horizontal_alignment = 1
+
+[node name="Control8" type="Control" parent="Credits/scroll/vbox/grid_art"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="spacer4" type="Control" parent="Credits/scroll/vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="title4" type="Label" parent="Credits/scroll/vbox"]
+layout_mode = 2
+theme = ExtResource("9_pgh5m")
+text = "credits_title_music"
+horizontal_alignment = 1
+
+[node name="grid_music" type="GridContainer" parent="Credits/scroll/vbox"]
+layout_mode = 2
+columns = 5
+
+[node name="Control" type="Control" parent="Credits/scroll/vbox/grid_music"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="name2" type="Label" parent="Credits/scroll/vbox/grid_music"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Symbol24"
+horizontal_alignment = 1
+
+[node name="name3" type="Label" parent="Credits/scroll/vbox/grid_music"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Symbol24"
+horizontal_alignment = 1
+
+[node name="name4" type="Label" parent="Credits/scroll/vbox/grid_music"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Symbol24"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Credits/scroll/vbox/grid_music"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="spacer5" type="Control" parent="Credits/scroll/vbox"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="title5" type="Label" parent="Credits/scroll/vbox"]
+layout_mode = 2
+theme = ExtResource("9_pgh5m")
+text = "credits_title_sfx"
+horizontal_alignment = 1
+
+[node name="grid_sfx" type="GridContainer" parent="Credits/scroll/vbox"]
+layout_mode = 2
+columns = 5
+
+[node name="Control" type="Control" parent="Credits/scroll/vbox/grid_sfx"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="name2" type="Label" parent="Credits/scroll/vbox/grid_sfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Symbol24"
+horizontal_alignment = 1
+
+[node name="name3" type="Label" parent="Credits/scroll/vbox/grid_sfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Symbol24"
+horizontal_alignment = 1
+
+[node name="name4" type="Label" parent="Credits/scroll/vbox/grid_sfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "Symbol24"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Credits/scroll/vbox/grid_sfx"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="ButtonIcon" parent="Credits" instance=ExtResource("11_x4me4")]
+position = Vector2(276, 160)
+scale = Vector2(0.7, 0.7)
+
+[node name="back_label" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 157.0
+offset_right = 330.0
+offset_bottom = 173.0
+theme = ExtResource("12_ovhd7")
+text = "credits_back"

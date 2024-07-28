@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfhqmdnorexod"]
+[gd_scene load_steps=10 format=3 uid="uid://dfhqmdnorexod"]
 
 [ext_resource type="Script" path="res://Code/Autoloads/ui.gd" id="1_n0din"]
 [ext_resource type="PackedScene" uid="uid://3x2iruvktc0i" path="res://Scenes/UI/potions_ui_bar.tscn" id="2_234t1"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://hbkif3em4ycg" path="res://Textures/minerals/Icon16.png" id="5_b8n4l"]
 [ext_resource type="PackedScene" uid="uid://chj4ay27aiy7n" path="res://Scenes/UI/popup.tscn" id="6_ncaiv"]
 [ext_resource type="PackedScene" uid="uid://dqf1tyqrydood" path="res://Scenes/UI/pause_screen.tscn" id="7_rhl1q"]
+[ext_resource type="PackedScene" uid="uid://b2liyig4xbat6" path="res://Scenes/UI/game_over.tscn" id="8_trmth"]
+[ext_resource type="PackedScene" uid="uid://cqlvxeyduofom" path="res://Scenes/UI/loading_screen.tscn" id="9_0384p"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
@@ -14,11 +16,13 @@ layer = 128
 script = ExtResource("1_n0din")
 
 [node name="PlayerUI" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 320.0
+offset_bottom = 180.0
 
 [node name="potions" parent="PlayerUI" instance=ExtResource("2_234t1")]
 layout_mode = 1
@@ -45,3 +49,8 @@ texture = ExtResource("5_b8n4l")
 process_mode = 1
 
 [node name="PauseScreen" parent="PlayerUI" instance=ExtResource("7_rhl1q")]
+
+[node name="GameOver" parent="PlayerUI" instance=ExtResource("8_trmth")]
+visible = false
+
+[node name="Loading" parent="." instance=ExtResource("9_0384p")]

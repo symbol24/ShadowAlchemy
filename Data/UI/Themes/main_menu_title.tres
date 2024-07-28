@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://df41o4hyksxkq"]
+
+[ext_resource type="FontFile" uid="uid://ci28bmlumlryh" path="res://Data/Fonts/alagard.ttf" id="1_p57lk"]
+
+[resource]
+Label/fonts/font = ExtResource("1_p57lk")

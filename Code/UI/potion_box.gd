@@ -15,6 +15,12 @@ func remove_selection():
 func display_selection():
 	selector.show()
 
+func set_icon():
+	if data:
+		if !is_node_ready(): await ready
+		if !sprite.is_node_ready(): await sprite.ready
+		sprite.set_texture(data.potion_icon.texture)
+
 func _update_cooldown(_potion:PotionData = null, _timer := 0.0):
 	if _potion and _potion == data:
 		if cool_down_progress.hidden: cool_down_progress.show()

@@ -15,3 +15,17 @@ pause_rb_label,Select next potion to the right
 pause_rt_label,Throw/Use Potion
 pause_start_label,Pause/Unpause
 pause_close_label,Close Screen
+title,The Stone
+company_name,Robots in Disguise
+credits_title_1,Almost Everything
+credits_title_art,Art
+credits_title_music,Music
+credits_title_sfx,SFX
+credits_back,Back
+gameover_dead_title,You have perished
+gameover_dead_texte,You died in your quest to find the Philosopher Stone. Your body remains lost to this day.
+gameover_success_title,You found the Philosopher Stone
+gameover_success_texte,"With the Philosopher Stone in hand, you return triumphant from your quest. Is this teh real Stone? Only time will tell."
+game_over_label,Return to the Main Menu
+play_label,Play
+credit_label,Credits

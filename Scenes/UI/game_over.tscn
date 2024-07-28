@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2liyig4xbat6"]
+
+[ext_resource type="Script" path="res://Code/UI/game_over_screen.gd" id="1_nra7f"]
+[ext_resource type="Texture2D" uid="uid://bcxkbyimvvrba" path="res://Textures/UI/GUI.png" id="2_umok7"]
+[ext_resource type="Theme" uid="uid://bhf8wmvt75asv" path="res://Data/UI/Themes/gameover_title.tres" id="3_kaiqv"]
+[ext_resource type="Theme" uid="uid://dwooisnmjl13f" path="res://Data/UI/Themes/gameover_text.tres" id="4_1seje"]
+[ext_resource type="Texture2D" uid="uid://bksgq20ooejrw" path="res://Textures/AssetPack/Light/transform/transform9.png" id="5_fu2cs"]
+[ext_resource type="Texture2D" uid="uid://hbkif3em4ycg" path="res://Textures/minerals/Icon16.png" id="6_bc403"]
+[ext_resource type="PackedScene" uid="uid://jd6gphkmw30k" path="res://Scenes/UI/Button_icons/b.tscn" id="7_q82b7"]
+[ext_resource type="Theme" uid="uid://duqdmscxg7jxd" path="res://Data/UI/Themes/pause_labels.tres" id="8_kxf8a"]
+
+[node name="GameOver" type="Control"]
+process_mode = 3
+custom_minimum_size = Vector2(320, 176)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 176.0
+script = ExtResource("1_nra7f")
+
+[node name="pause_background_nine" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 40.0
+offset_right = 235.0
+offset_bottom = 140.0
+texture = ExtResource("2_umok7")
+region_rect = Rect2(0, 96, 48, 32)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="game_over_title" type="Label" parent="pause_background_nine"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 21.0
+theme = ExtResource("3_kaiqv")
+text = "game_over_title"
+horizontal_alignment = 1
+
+[node name="game_over_text" type="Label" parent="pause_background_nine"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 30.0
+offset_right = 150.0
+offset_bottom = 60.0
+theme = ExtResource("4_1seje")
+text = "game_over_text"
+horizontal_alignment = 1
+
+[node name="succes_sprite" type="Sprite2D" parent="pause_background_nine"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(73, 61)
+texture = ExtResource("5_fu2cs")
+
+[node name="dead_sprite" type="Sprite2D" parent="pause_background_nine"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(73, 80)
+texture = ExtResource("6_bc403")
+
+[node name="background_nine_rect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(40, 13)
+layout_mode = 0
+offset_left = 171.0
+offset_top = 140.0
+offset_right = 235.0
+offset_bottom = 153.0
+texture = ExtResource("2_umok7")
+region_rect = Rect2(81.3529, 97.0819, 29.5936, 29.8638)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="b2" parent="." instance=ExtResource("7_q82b7")]
+position = Vector2(182, 147)
+scale = Vector2(0.4, 0.4)
+
+[node name="game_over_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 145.0
+offset_right = 309.0
+offset_bottom = 155.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("8_kxf8a")
+text = "game_over_label"

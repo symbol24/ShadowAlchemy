@@ -22,7 +22,7 @@
 [node name="PauseScreen" type="Control"]
 process_mode = 3
 visible = false
-custom_minimum_size = Vector2(320, 180)
+custom_minimum_size = Vector2(320, 176)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

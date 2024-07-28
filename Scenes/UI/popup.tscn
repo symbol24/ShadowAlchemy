@@ -7,6 +7,7 @@
 [node name="Popup" type="Control"]
 visible = false
 modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(320, 176)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

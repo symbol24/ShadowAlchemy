@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://burt8ytxhfm5t"]
+[gd_scene load_steps=38 format=3 uid="uid://burt8ytxhfm5t"]
 
 [ext_resource type="TileSet" uid="uid://bus3xfghoqlq2" path="res://Data/Tilesets/dungeon.tres" id="1_b32wh"]
 [ext_resource type="Script" path="res://Code/Utilities/TilemapCollisionBaker.gd" id="1_swrk1"]
 [ext_resource type="Script" path="res://Code/Worlds/s_a_world.gd" id="1_w6euf"]
+[ext_resource type="Resource" uid="uid://bitssmt3qsyts" path="res://Data/Worlds/test.tres" id="2_k8if4"]
 [ext_resource type="PackedScene" uid="uid://xi5m14bnt4mo" path="res://Scenes/Character/main_character.tscn" id="3_fjv27"]
 [ext_resource type="PackedScene" uid="uid://bb4r86jso6ntg" path="res://Scenes/Utilities/s_a_camera.tscn" id="5_oawm8"]
 [ext_resource type="Texture2D" uid="uid://bt2bti6naf0to" path="res://Textures/black_sprite.png" id="6_t04ti"]
@@ -84,8 +85,9 @@ size = Vector2(48, 16)
 
 [node name="Node2D" type="Node2D" groups=["world"]]
 script = ExtResource("1_w6euf")
+data = ExtResource("2_k8if4")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="darkener" type="CanvasModulate" parent="."]
 color = Color(0.0627451, 0.0627451, 0.113725, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]

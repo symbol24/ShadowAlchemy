@@ -1,7 +1,6 @@
 class_name SAPickup extends SAInteractible
 
 @export var potion_data:PotionData
-@export var action := GameMode.BUTTON.ACTION3
 
 @onready var sprite:Sprite2D = %sprite
 @onready var animator:AnimationPlayer = %animator

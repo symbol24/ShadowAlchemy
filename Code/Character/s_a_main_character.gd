@@ -8,12 +8,22 @@ const HEAL_FX = preload("res://Scenes/FX/heal_fx.tscn")
 
 func _ready():
 	super._ready()
+	#SASignals.TeleportCharacter.connect()
+	SASignals.AddStone.connect(_add_stone)
 	if !camera_remote.is_node_ready(): await camera_remote.ready
 	name = "MainCharacter"
 	SASignals.HealCharacter.connect(_heal)
 	await get_tree().create_timer(0.1).timeout
 	SASignals.CharacterReady.emit(self)
-	
+	SASignals.TeleportCharacter.connect(_teleport)
+
+func _teleport(_pos := Vector2.ZERO):
+	if _pos != Vector2.ZERO:
+		global_position = _pos
+
+func _add_stone():
+	data.has_the_stone = true
+
 func character_dead():
 	SASignals.PlayerDead.emit()
 

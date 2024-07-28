@@ -3,20 +3,20 @@ class_name SAThrowablePotion extends RigidBody2D
 @export var data:PotionData
 
 @onready var hit_detection:Area2D = %hit_detection
-@onready var y = %y
 
 var break_once := false
 var loaded = null
 
 func _ready():
 	hit_detection.body_entered.connect(_collision_detection)
+	hit_detection.area_entered.connect(_collision_detection)
 	if data.hit_fx_path:
 		loaded = load(data.hit_fx_path)
-	
+	name = data.id
 
 func _collision_detection(_area):
 	for each in _area.get_groups():
-		if each in ["ground", "enemy"]: 
+		if each in ["ground", "enemy", "shield"]: 
 			break_potion()
 	
 func break_potion():

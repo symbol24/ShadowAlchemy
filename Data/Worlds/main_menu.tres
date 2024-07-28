@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SAWorldData" load_steps=2 format=3 uid="uid://b2hm85q5h6ocf"]
+
+[ext_resource type="Script" path="res://Code/Worlds/world_data.gd" id="1_hynxq"]
+
+[resource]
+script = ExtResource("1_hynxq")
+id = "main_menu"
+scene_path = "res://Scenes/Worlds/main_menu.tscn"
+display_player_ui = false

@@ -22,24 +22,29 @@ var selection := 0:
 		SASignals.PotionSelectionChanged.emit(selection)
 
 func _ready():
-	SASignals.AddPotion.connect(_add_potion)
 	super._ready()
-	for data in STARTERS:
-		SASignals.AddPotion.emit(data)
+	SASignals.AddPotion.connect(_add_potion)
 	SASignals.PotionSelectionChanged.emit(selection)
+	SASignals.CharacterReady.connect(_potion_setup)
+
+func _potion_setup(_character:SACharacterBody2D):
+	if _character == SAOwner:
+		SASignals.SendHowanyStarterPotions.emit(STARTERS.size())
+		for data in STARTERS:
+			SASignals.AddPotion.emit(data)
 
 func _process(_delta):
 	if SAOwner and GameMode.is_playing():
-		aim_direction = aim()
+		aim_direction = _aim()
 		if aim_direction != Vector2.ZERO: 
 			aim_line.show()
-			aim_line.set_point_position(1, get_point(aim_direction, max_radius))
+			aim_line.set_point_position(1, _get_point(aim_direction, max_radius))
 		else:
 			aim_line.hide()
 		if aim_direction != Vector2.ZERO and SAInput.action_7:
-			throw(aim_direction.normalized(), potions[selection])
+			_throw(aim_direction.normalized(), potions[selection])
 		elif aim_direction == Vector2.ZERO and SAInput.action_7 and potions[selection]["data"].element == GameMode.ELEMENT.HEAL:
-			throw(aim_direction.normalized(), potions[selection])
+			_throw(aim_direction.normalized(), potions[selection])
 		
 		if SAInput.action_5 and !toggle_pressed: 
 			toggle_pressed = true
@@ -63,17 +68,17 @@ func _process(_delta):
 				toggle_pressed = false
 				toggle_timer = 0.0
 
-func aim() -> Vector2:
+func _aim() -> Vector2:
 	return Vector2(SAInput.aim_left_right, SAInput.aim_up_down)
 
-func throw(_aim_direction:=Vector2.ZERO, _potion:Dictionary = {}):
+func _throw(_aim_direction:=Vector2.ZERO, _potion:Dictionary = {}):
 	if _potion.has("potion") and _potion["can_throw"]:
 		if _potion["data"].element != GameMode.ELEMENT.HEAL:
 			_potion["can_throw"] = false
 			var new_potion = _potion["potion"].instantiate()
 			GameMode.world.add_child(new_potion)
 			new_potion.global_position = global_position
-			new_potion.apply_central_impulse(_aim_direction.normalized() * get_final_throw_strength())
+			new_potion.apply_central_impulse(_aim_direction.normalized() * _get_final_throw_strength())
 		elif _potion["data"].element == GameMode.ELEMENT.HEAL:
 			_potion["can_throw"] = false
 			SASignals.HealCharacter.emit(GameMode.character, _potion["data"].heal_value)
@@ -82,18 +87,13 @@ func throw(_aim_direction:=Vector2.ZERO, _potion:Dictionary = {}):
 func _timer_timeout():
 	can_throw = true
 
-func get_point(_aim_direction := Vector2.ZERO, _max_length := 30.0):
+func _get_point(_aim_direction := Vector2.ZERO, _max_length := 30.0):
 	return Vector2(_max_length * _aim_direction.x, _max_length * _aim_direction.y)
 
-func get_final_throw_strength() -> float:
+func _get_final_throw_strength() -> float:
 	var strength:float = SAOwner.data.throw_strength
 	strength = strength + ((SAOwner.data.speed/3) * (SAOwner.velocity.x / 100))
 	return strength
-
-func tab_selection(_left := false) -> int:
-	toggle_pressed = true
-	if _left: return -1
-	return 1
 
 func _add_potion(_new_potion:PotionData = null):
 	if _new_potion:

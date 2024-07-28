@@ -30,10 +30,13 @@ var direction := 0.0:
 		if GameMode.is_playing() and grounded and direction != 0.0: _update_state(name, STATE.WALKING)
 var to_flip := []
 
+var pre_animation := ""
+
 #STATEMACHINE
 var current_state := STATE.IDLE:
 	set(_value):
-		current_state = _value
+		if current_state != STATE.DEAD:
+			current_state = _value
 		#print(name, " new state: ", current_state)
 		#if current_state == STATE.ATTACKING: print(name, " new state: ", current_state)
 
@@ -113,11 +116,17 @@ func _update_state(_name := "", _new_state := STATE.IDLE):
 
 func _update_animation(_name := "", _new_anim := ""):
 	if _name == name and animator.current_animation != _new_anim:
-		#print("NEW ANIMATION: ", _new_anim)
-		animator.play(_new_anim)
+		if pre_animation != "death":
+			pre_animation = animator.current_animation
+			#print("NEW ANIMATION: ", _new_anim)
+			animator.play(_new_anim)
+
+func is_dead():
+	return current_state == STATE.DEAD
 
 func _death(_data):
 	if _data == data:
+		print("in death func")
 		_update_state(name, STATE.DEAD)
 		_update_animation(name, "death")
 

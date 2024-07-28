@@ -1,0 +1,137 @@
+[gd_scene load_steps=35 format=3 uid="uid://cuvdv5akwx2us"]
+
+[ext_resource type="Script" path="res://Code/Worlds/main_world.gd" id="1_8hjy3"]
+[ext_resource type="Resource" uid="uid://ced45e8bpctjm" path="res://Data/Worlds/world_01.tres" id="2_e03on"]
+[ext_resource type="PackedScene" uid="uid://ctmefvv0gxv04" path="res://Scenes/Worlds/Rooms/room_01.tscn" id="3_2l6bq"]
+[ext_resource type="PackedScene" uid="uid://bb4r86jso6ntg" path="res://Scenes/Utilities/s_a_camera.tscn" id="3_cya65"]
+[ext_resource type="PackedScene" uid="uid://b2gvnbut06ne8" path="res://Scenes/Worlds/Rooms/room_02.tscn" id="4_cxn6j"]
+[ext_resource type="PackedScene" uid="uid://3l5237royb1l" path="res://Scenes/Utilities/darkener.tscn" id="6_6tnx3"]
+[ext_resource type="PackedScene" uid="uid://r1ko5ow1my3j" path="res://Scenes/Worlds/Rooms/room_03.tscn" id="6_a3oju"]
+[ext_resource type="PackedScene" uid="uid://c6ukla8l07vaw" path="res://Scenes/Worlds/Rooms/room_04.tscn" id="7_jni6l"]
+[ext_resource type="PackedScene" uid="uid://bx5a3iopbre5r" path="res://Scenes/Worlds/Rooms/room_05.tscn" id="8_bcyra"]
+[ext_resource type="PackedScene" uid="uid://7wiaxo33t8du" path="res://Scenes/Worlds/Rooms/room_06.tscn" id="10_74dcj"]
+[ext_resource type="PackedScene" uid="uid://c06fd4yvpwj2q" path="res://Scenes/Worlds/Rooms/room_07.tscn" id="11_gpi6n"]
+[ext_resource type="PackedScene" uid="uid://cc13ylay5fqkm" path="res://Scenes/Worlds/Rooms/room_08.tscn" id="12_bn3eb"]
+[ext_resource type="PackedScene" uid="uid://c4wnldbrb345r" path="res://Scenes/Worlds/Rooms/room_09.tscn" id="13_tmqd5"]
+[ext_resource type="PackedScene" uid="uid://bf3w3jik7ledy" path="res://Scenes/Worlds/Rooms/room_10_light_potion.tscn" id="14_0t5ui"]
+[ext_resource type="PackedScene" uid="uid://cf00lslvuskdw" path="res://Scenes/Worlds/Rooms/room_11.tscn" id="15_cgwwr"]
+[ext_resource type="PackedScene" uid="uid://d1n3ie4aww84b" path="res://Scenes/Worlds/Rooms/room_12.tscn" id="16_jo5ew"]
+[ext_resource type="PackedScene" uid="uid://11vyp2ts1lqd" path="res://Scenes/Worlds/Rooms/room_13.tscn" id="17_gmk26"]
+[ext_resource type="PackedScene" uid="uid://d0b7e477eitw8" path="res://Scenes/Worlds/Rooms/room_14_air_potion.tscn" id="18_lrhy3"]
+[ext_resource type="PackedScene" uid="uid://cqdf6ugdxxt8g" path="res://Scenes/Worlds/Rooms/room_15.tscn" id="19_deubm"]
+[ext_resource type="PackedScene" uid="uid://p3ayn480dibd" path="res://Scenes/Worlds/Rooms/room_16.tscn" id="20_gd0m5"]
+[ext_resource type="PackedScene" uid="uid://bvi06ndwab6bu" path="res://Scenes/Worlds/Rooms/room_17.tscn" id="21_wudh8"]
+[ext_resource type="PackedScene" uid="uid://bw50rek3xlsgw" path="res://Scenes/Worlds/Rooms/room_18.tscn" id="22_4qdri"]
+[ext_resource type="PackedScene" uid="uid://bfbhs765w23yi" path="res://Scenes/Worlds/Rooms/room_19_earth_potion.tscn" id="23_m5c3v"]
+[ext_resource type="PackedScene" uid="uid://c3giqdqggccut" path="res://Scenes/Worlds/Rooms/room_20.tscn" id="24_lgjnj"]
+[ext_resource type="PackedScene" uid="uid://bm40se1tcjsta" path="res://Scenes/Worlds/Rooms/room_21_water_potion.tscn" id="25_wse3t"]
+[ext_resource type="PackedScene" uid="uid://bevq0vpi5iyai" path="res://Scenes/Worlds/Rooms/room_22.tscn" id="26_ripbn"]
+[ext_resource type="PackedScene" uid="uid://bow0550u81fb5" path="res://Scenes/Worlds/Rooms/room_23_dark_potion.tscn" id="27_xsb2s"]
+[ext_resource type="PackedScene" uid="uid://dtptoc2yyokev" path="res://Scenes/Worlds/Rooms/room_24.tscn" id="28_5wbhn"]
+[ext_resource type="PackedScene" uid="uid://b2nr5f1eh10g" path="res://Scenes/Worlds/Rooms/room_25.tscn" id="29_ie57p"]
+[ext_resource type="PackedScene" uid="uid://clt1dhkovihwv" path="res://Scenes/Worlds/Rooms/room_26.tscn" id="30_clyen"]
+[ext_resource type="PackedScene" uid="uid://du3cx000y3f10" path="res://Scenes/Worlds/Rooms/room_27.tscn" id="31_saf1i"]
+[ext_resource type="PackedScene" uid="uid://bo48d5ochpm0e" path="res://Scenes/Worlds/Rooms/room_28.tscn" id="32_e8g6s"]
+[ext_resource type="PackedScene" uid="uid://ddtwk72xpefuu" path="res://Scenes/Worlds/Rooms/room_29.tscn" id="33_nsa00"]
+[ext_resource type="PackedScene" uid="uid://br0d8bot43lss" path="res://Scenes/Worlds/Rooms/room_30_stone.tscn" id="34_q4elf"]
+
+[node name="World01" type="Node2D"]
+script = ExtResource("1_8hjy3")
+data = ExtResource("2_e03on")
+
+[node name="darkener" parent="." instance=ExtResource("6_6tnx3")]
+unique_name_in_owner = true
+visible = false
+color = Color(0.0196078, 0.0196078, 0.0431373, 1)
+
+[node name="SACamera" parent="." instance=ExtResource("3_cya65")]
+position = Vector2(160, 88)
+
+[node name="room01" parent="." instance=ExtResource("3_2l6bq")]
+
+[node name="room02" parent="." instance=ExtResource("4_cxn6j")]
+position = Vector2(320, 0)
+
+[node name="room03" parent="." instance=ExtResource("6_a3oju")]
+position = Vector2(640, 0)
+
+[node name="room04" parent="." instance=ExtResource("7_jni6l")]
+position = Vector2(960, 0)
+
+[node name="room05" parent="." instance=ExtResource("8_bcyra")]
+position = Vector2(640, 176)
+
+[node name="room06" parent="." instance=ExtResource("10_74dcj")]
+position = Vector2(960, 176)
+
+[node name="room07" parent="." instance=ExtResource("11_gpi6n")]
+position = Vector2(1280, 176)
+
+[node name="room08" parent="." instance=ExtResource("12_bn3eb")]
+position = Vector2(1280, 0)
+
+[node name="room09" parent="." instance=ExtResource("13_tmqd5")]
+position = Vector2(1280, -176)
+
+[node name="room_10_light_potion" parent="." instance=ExtResource("14_0t5ui")]
+position = Vector2(960, -176)
+
+[node name="room11" parent="." instance=ExtResource("15_cgwwr")]
+position = Vector2(321, -176)
+
+[node name="room12" parent="." instance=ExtResource("16_jo5ew")]
+position = Vector2(640, -176)
+
+[node name="room13" parent="." instance=ExtResource("17_gmk26")]
+position = Vector2(640, -352)
+
+[node name="room14_air_potion" parent="." instance=ExtResource("18_lrhy3")]
+position = Vector2(960, -352)
+
+[node name="room15" parent="." instance=ExtResource("19_deubm")]
+position = Vector2(1600, 0)
+
+[node name="room16" parent="." instance=ExtResource("20_gd0m5")]
+position = Vector2(1600, 176)
+
+[node name="room17" parent="." instance=ExtResource("21_wudh8")]
+position = Vector2(1600, 352)
+
+[node name="room18" parent="." instance=ExtResource("22_4qdri")]
+position = Vector2(1280, 352)
+
+[node name="room19_earth_potion" parent="." instance=ExtResource("23_m5c3v")]
+position = Vector2(959, 352)
+
+[node name="room20" parent="." instance=ExtResource("24_lgjnj")]
+position = Vector2(1920, 176)
+
+[node name="room21_water_potion" parent="." instance=ExtResource("25_wse3t")]
+position = Vector2(2240, 176)
+
+[node name="room22" parent="." instance=ExtResource("26_ripbn")]
+position = Vector2(1920, 352)
+
+[node name="room23_dark_potion" parent="." instance=ExtResource("27_xsb2s")]
+position = Vector2(1920, 528)
+
+[node name="room24" parent="." instance=ExtResource("28_5wbhn")]
+position = Vector2(1600, -176)
+
+[node name="room25" parent="." instance=ExtResource("29_ie57p")]
+position = Vector2(1920, -176)
+
+[node name="room26" parent="." instance=ExtResource("30_clyen")]
+position = Vector2(2240, -176)
+
+[node name="room27" parent="." instance=ExtResource("31_saf1i")]
+position = Vector2(1920, -352)
+
+[node name="room28" parent="." instance=ExtResource("32_e8g6s")]
+position = Vector2(2240, -352)
+
+[node name="room29" parent="." instance=ExtResource("33_nsa00")]
+position = Vector2(2560, -176)
+
+[node name="room30_stone" parent="." instance=ExtResource("34_q4elf")]
+position = Vector2(2560, -352)

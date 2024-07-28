@@ -9,10 +9,16 @@ var potions:Array[PotionData] = []
 var boxs := []
 var width := 20.0
 var spacer := 5.0
+var starter_count := 0
+var setup := true
 
 func _ready():
+	SASignals.SendHowanyStarterPotions.connect(_set_starter_count)
 	SASignals.AddPotion.connect(_add_potion)
 	SASignals.PotionSelectionChanged.connect(_update_selection)
+
+func _set_starter_count(_value := 0):
+	starter_count = _value
 
 func _add_potion(_potion:PotionData):
 	for each in potions:
@@ -22,13 +28,17 @@ func _add_potion(_potion:PotionData):
 	potions.append(_potion)
 	
 	var new_box = POTION_BOX.instantiate()
-	hbox.add_child(new_box)
-	new_box.sprite.texture = _potion.potion_icon.texture
+	hbox.add_child.call_deferred(new_box)
 	new_box.data = _potion
+	new_box.set_icon()
 	boxs.append(new_box)
 	
 	background_nine_rect.size.x = (width * potions.size()) + spacer
 	background_nine_rect.position.x = 160 - (background_nine_rect.size.x/2)
+	
+	if setup and starter_count >= boxs.size():
+		setup = false
+		SASignals.UIDone.emit(true)
 
 func _update_selection(_value:=0):
 	var x = 0

@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://m2c1i5odp7sl" path="res://Data/UI/Themes/hp_bar_theme.tres" id="4_5jlwo"]
 
 [node name="player_hp" type="Control"]
+custom_minimum_size = Vector2(320, 176)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_hb6xx")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SAWorldData" load_steps=2 format=3 uid="uid://ced45e8bpctjm"]
+
+[ext_resource type="Script" path="res://Code/Worlds/world_data.gd" id="1_j7dtw"]
+
+[resource]
+script = ExtResource("1_j7dtw")
+id = "world_01"
+scene_path = "res://Scenes/Worlds/world_01.tscn"
+display_player_ui = true
+spawn_character = true

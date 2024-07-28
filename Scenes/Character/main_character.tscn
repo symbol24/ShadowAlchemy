@@ -244,7 +244,7 @@ _data = {
 "walk": SubResource("Animation_vmgje")
 }
 
-[node name="MainCharacter" type="CharacterBody2D"]
+[node name="MainCharacter" type="CharacterBody2D" groups=["main_character"]]
 collision_layer = 2
 platform_floor_layers = 4294901761
 script = ExtResource("2_lm4qm")

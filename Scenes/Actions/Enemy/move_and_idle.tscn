@@ -4,3 +4,8 @@
 
 [node name="MoveAndIdle" type="Node2D"]
 script = ExtResource("1_de28r")
+
+[node name="edge_detector" type="RayCast2D" parent="." groups=["to_flip"]]
+unique_name_in_owner = true
+position = Vector2(4, -4)
+target_position = Vector2(0, 5)

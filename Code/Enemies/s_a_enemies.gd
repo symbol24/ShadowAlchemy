@@ -1,10 +1,14 @@
 class_name SAEnemy extends SACharacterBody2D
 
+@export var shield_element := GameMode.ELEMENT.AIR
+
 var attacking := false
 var target:SAMainCharacter
+var room_in:SARooms
 
 func _ready():
 	super._ready()
+	room_in = get_parent() as SARooms
 	SASignals.EnemyAttack.connect(_trigger_attack)
 
 func _process(_delta):

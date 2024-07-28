@@ -30,10 +30,10 @@ func set_data(_element := GameMode.ELEMENT.AIR, _datas:Array = []) -> EnemyShiel
 
 func _hit_detection(_area):
 	if _area.has_method("get_damages"):
-		print("shield_data.element ", shield_data.element)
+		#print("shield_data.element ", shield_data.element)
 		for damage in _area.get_damages():
-			print("damage.elements ", damage.elements)
-			print("GameMode.check_elements(shield_data.element, damage.elements) ", GameMode.check_elements(shield_data.element, damage.elements))
+			#print("damage.elements ", damage.elements)
+			#print("GameMode.check_elements(shield_data.element, damage.elements) ", GameMode.check_elements(shield_data.element, damage.elements))
 			if (GameMode.check_elements(shield_data.element, damage.elements)):
 				hp -= damage.base_damage
 		if hp <= 0:
@@ -41,8 +41,8 @@ func _hit_detection(_area):
 
 func _deactivate():
 	hit_collider.set_disabled.call_deferred(true)
+	SAOwner.hit_collider.set_disabled.call_deferred(false)
 	animator.play("deactivate")
 
 func end_deactivation():
-	SAOwner.hit_collider.set_disabled(false)
 	sprite.hide()

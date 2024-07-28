@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dsfc3xtb4b2gt"
+path="res://.godot/imported/Waterspray 2.ogg-71d2a53f79f235870335f2a43f17ee2b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/Waterspray 2.ogg"
+dest_files=["res://.godot/imported/Waterspray 2.ogg-71d2a53f79f235870335f2a43f17ee2b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

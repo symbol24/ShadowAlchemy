@@ -1,7 +1,7 @@
 class_name PauseScreen extends Control
 
 func _process(_delta):
-	if !visible and SAInput.start:
+	if GameMode.is_playing() and !visible and SAInput.start:
 		SASignals.PauseGame.emit(true)
 		SASignals.FocusedOnUi.emit(true)
 		show()
