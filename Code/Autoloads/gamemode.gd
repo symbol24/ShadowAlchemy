@@ -26,12 +26,15 @@ var character:SAMainCharacter = null
 var spawn_point: Marker2D = null
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	SASignals.WorldReady.connect(_spawn_character)
 	SASignals.CameraReady.connect(_set_camera)
 	SASignals.CharacterReady.connect(_set_character)
 	SASignals.PauseGame.connect(_toggle_pause)
 	SASignals.LoadWorld.connect(_load_world)
 	SASignals.UIDone.connect(_receive_ui_done)
+	SASignals.CharacterNoMoreLive.connect(_end_run)
+	SASignals.GameSucces.connect(_end_run)
 
 func _process(_delta):
 	if is_loading:
@@ -129,3 +132,7 @@ func _set_camera_pos(_pos := Vector2.ZERO):
 func _set_camera(_camera):
 	if _camera is SACamera:
 		camera = _camera
+
+func _end_run(_data := character.data):
+	if _data == character.data:
+		_toggle_pause(true)

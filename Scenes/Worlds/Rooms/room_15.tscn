@@ -103,7 +103,7 @@ position = Vector2(2.5, 1)
 shape = SubResource("RectangleShape2D_dlxyb")
 
 [node name="teleport_to_next_room_up" type="Area2D" parent="."]
-position = Vector2(159, 1)
+position = Vector2(159, 18)
 collision_mask = 2
 script = ExtResource("4_au5jf")
 
@@ -112,7 +112,7 @@ position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_mmfgr")
 
 [node name="teleport_to_next_room_down" type="Area2D" parent="."]
-position = Vector2(159, 176)
+position = Vector2(159, 154)
 collision_mask = 2
 script = ExtResource("4_au5jf")
 

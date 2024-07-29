@@ -21,14 +21,17 @@ func _ready():
 
 func _process(_delta):
 	if visible and SAInput.ui_cancel:
+		hide()
 		SASignals.LoadWorld.emit("main_menu")
 
-func _set_dead(_character):
-	if _character == GameMode.character:
+func _set_dead(_data):
+	if _data == GameMode.character.data:
 		result = "dead"
+		_display_game_over(result)
 
 func _set_succes():
 	result = "succes"
+	_display_game_over(result)
 
 func _display_game_over(_result := ""):
 	if _result == "dead":

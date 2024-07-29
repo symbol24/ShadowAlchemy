@@ -51,14 +51,15 @@ offset_bottom = 60.0
 theme = ExtResource("4_1seje")
 text = "game_over_text"
 horizontal_alignment = 1
+autowrap_mode = 3
 
-[node name="succes_sprite" type="Sprite2D" parent="pause_background_nine"]
+[node name="dead_sprite" type="Sprite2D" parent="pause_background_nine"]
 unique_name_in_owner = true
 visible = false
 position = Vector2(73, 61)
 texture = ExtResource("5_fu2cs")
 
-[node name="dead_sprite" type="Sprite2D" parent="pause_background_nine"]
+[node name="succes_sprite" type="Sprite2D" parent="pause_background_nine"]
 unique_name_in_owner = true
 visible = false
 position = Vector2(73, 80)

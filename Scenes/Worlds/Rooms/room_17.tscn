@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvi06ndwab6bu"]
+[gd_scene load_steps=17 format=3 uid="uid://bvi06ndwab6bu"]
 
 [ext_resource type="Script" path="res://Code/Worlds/rooms.gd" id="1_1oqih"]
 [ext_resource type="Script" path="res://Code/Utilities/TilemapCollisionBaker.gd" id="2_mamyx"]
@@ -32,9 +32,6 @@ size = Vector2(5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfgr"]
 size = Vector2(64, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oraem"]
-size = Vector2(64, 8)
 
 [node name="room17" type="Node2D" groups=["room"]]
 script = ExtResource("1_1oqih")
@@ -96,22 +93,13 @@ position = Vector2(2.5, 1)
 shape = SubResource("RectangleShape2D_dlxyb")
 
 [node name="teleport_to_next_room_up" type="Area2D" parent="."]
-position = Vector2(159, 1)
+position = Vector2(159, 17)
 collision_mask = 2
 script = ExtResource("4_d3h5b")
 
 [node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room_up"]
 position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_mmfgr")
-
-[node name="teleport_to_next_room_down" type="Area2D" parent="."]
-position = Vector2(159, 176)
-collision_mask = 2
-script = ExtResource("4_d3h5b")
-
-[node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room_down"]
-position = Vector2(1, -4)
-shape = SubResource("RectangleShape2D_oraem")
 
 [node name="platform" parent="." instance=ExtResource("5_162g3")]
 position = Vector2(32, 102)

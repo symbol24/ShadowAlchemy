@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4wnldbrb345r"]
+[gd_scene load_steps=16 format=3 uid="uid://c4wnldbrb345r"]
 
 [ext_resource type="Script" path="res://Code/Worlds/rooms.gd" id="1_61gcr"]
 [ext_resource type="Script" path="res://Code/Utilities/TilemapCollisionBaker.gd" id="2_5l0ld"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Code/Utilities/teleport_to_next_room.gd" id="4_jkv6j"]
 [ext_resource type="PackedScene" uid="uid://beyeh677ydtfh" path="res://Scenes/Enemies/skeleton_warrior.tscn" id="5_yt7ea"]
 [ext_resource type="PackedScene" uid="uid://cbq8rph4e5hyk" path="res://Scenes/Worlds/platforms/platform_half.tscn" id="6_02x7y"]
+[ext_resource type="PackedScene" uid="uid://cyvhx1bkfy7bt" path="res://Scenes/Worlds/background_items/merky_light.tscn" id="7_elcs1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxg8o"]
 size = Vector2(32, 80)
@@ -91,7 +92,7 @@ position = Vector2(2.5, 1)
 shape = SubResource("RectangleShape2D_4q73t")
 
 [node name="teleport_to_next_room_down" type="Area2D" parent="."]
-position = Vector2(159, 176)
+position = Vector2(159, 154)
 collision_mask = 2
 script = ExtResource("4_jkv6j")
 
@@ -104,3 +105,6 @@ position = Vector2(253, 144)
 
 [node name="platform" parent="." instance=ExtResource("6_02x7y")]
 position = Vector2(128, 155)
+
+[node name="MerkyLight" parent="." instance=ExtResource("7_elcs1")]
+position = Vector2(160, 64)

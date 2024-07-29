@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bow0550u81fb5"]
+[gd_scene load_steps=11 format=3 uid="uid://bow0550u81fb5"]
 
 [ext_resource type="Script" path="res://Code/Worlds/rooms.gd" id="1_0r2jl"]
 [ext_resource type="Script" path="res://Code/Utilities/TilemapCollisionBaker.gd" id="2_l8204"]
@@ -16,17 +16,8 @@ size = Vector2(320, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1do1r"]
 size = Vector2(128, 144)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_78yek"]
-size = Vector2(9, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlxyb"]
-size = Vector2(5, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfgr"]
 size = Vector2(64, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oraem"]
-size = Vector2(64, 8)
 
 [node name="room23_dark_potion" type="Node2D" groups=["room"]]
 script = ExtResource("1_0r2jl")
@@ -61,41 +52,14 @@ layer_0/tile_data = PackedInt32Array(655379, 196609, 3, 589843, 196609, 2, 39323
 [node name="camera_pos" type="Marker2D" parent="."]
 position = Vector2(160, 88)
 
-[node name="teleport_to_next_room_right" type="Area2D" parent="."]
-position = Vector2(319, 127)
-collision_mask = 2
-script = ExtResource("4_xpqpo")
-
-[node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room_right"]
-position = Vector2(-3.5, 1)
-shape = SubResource("RectangleShape2D_78yek")
-
-[node name="teleport_to_next_room" type="Area2D" parent="."]
-position = Vector2(0, 127)
-collision_mask = 2
-script = ExtResource("4_xpqpo")
-
-[node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room"]
-position = Vector2(2.5, 1)
-shape = SubResource("RectangleShape2D_dlxyb")
-
 [node name="teleport_to_next_room_up" type="Area2D" parent="."]
-position = Vector2(159, 1)
+position = Vector2(159, 13)
 collision_mask = 2
 script = ExtResource("4_xpqpo")
 
 [node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room_up"]
 position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_mmfgr")
-
-[node name="teleport_to_next_room_down" type="Area2D" parent="."]
-position = Vector2(159, 176)
-collision_mask = 2
-script = ExtResource("4_xpqpo")
-
-[node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room_down"]
-position = Vector2(1, -4)
-shape = SubResource("RectangleShape2D_oraem")
 
 [node name="Pickup_potion_dark" parent="." instance=ExtResource("5_65jv4")]
 position = Vector2(160, 127)

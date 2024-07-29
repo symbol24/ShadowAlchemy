@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bx5a3iopbre5r"]
+[gd_scene load_steps=14 format=3 uid="uid://bx5a3iopbre5r"]
 
 [ext_resource type="Script" path="res://Code/Worlds/rooms.gd" id="1_sk4ta"]
 [ext_resource type="Script" path="res://Code/Utilities/TilemapCollisionBaker.gd" id="2_nlbvn"]
@@ -25,14 +25,8 @@ size = Vector2(32, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78yek"]
 size = Vector2(9, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlxyb"]
-size = Vector2(5, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmfgr"]
 size = Vector2(64, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oraem"]
-size = Vector2(64, 8)
 
 [node name="room05" type="Node2D" groups=["room"]]
 script = ExtResource("1_sk4ta")
@@ -87,32 +81,14 @@ script = ExtResource("4_esnrm")
 position = Vector2(-3.5, 1)
 shape = SubResource("RectangleShape2D_78yek")
 
-[node name="teleport_to_next_room" type="Area2D" parent="."]
-position = Vector2(0, 127)
-collision_mask = 2
-script = ExtResource("4_esnrm")
-
-[node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room"]
-position = Vector2(2.5, 1)
-shape = SubResource("RectangleShape2D_dlxyb")
-
 [node name="teleport_to_next_room_up" type="Area2D" parent="."]
-position = Vector2(159, 1)
+position = Vector2(159, 18)
 collision_mask = 2
 script = ExtResource("4_esnrm")
 
 [node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room_up"]
 position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_mmfgr")
-
-[node name="teleport_to_next_room_down" type="Area2D" parent="."]
-position = Vector2(159, 176)
-collision_mask = 2
-script = ExtResource("4_esnrm")
-
-[node name="teleport_collider" type="CollisionShape2D" parent="teleport_to_next_room_down"]
-position = Vector2(1, -4)
-shape = SubResource("RectangleShape2D_oraem")
 
 [node name="SkeletonWarrior" parent="." instance=ExtResource("5_cp4n4")]
 position = Vector2(252, 144)

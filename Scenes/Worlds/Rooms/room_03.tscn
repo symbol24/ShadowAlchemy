@@ -97,7 +97,7 @@ position = Vector2(253, 144)
 position = Vector2(128, 155)
 
 [node name="teleport_to_next_room_down" type="Area2D" parent="."]
-position = Vector2(159, 176)
+position = Vector2(159, 155)
 collision_mask = 2
 script = ExtResource("5_5vb14")
 

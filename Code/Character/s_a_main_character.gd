@@ -16,6 +16,7 @@ func _ready():
 	await get_tree().create_timer(0.1).timeout
 	SASignals.CharacterReady.emit(self)
 	SASignals.TeleportCharacter.connect(_teleport)
+	SASignals.CharacterNoMoreLive.connect(_character_fully_dead)
 
 func _teleport(_pos := Vector2.ZERO):
 	if _pos != Vector2.ZERO:
@@ -26,6 +27,10 @@ func _add_stone():
 
 func character_dead():
 	SASignals.PlayerDead.emit()
+
+func _character_fully_dead(_data):
+	if _data == data:
+		hit_collider.set_disabled.call_deferred(true)
 
 func _hit_detection(_area):
 	if _area.has_method("get_damages") and !god_mode:
