@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cre3gmcvj5dak"]
+
+[ext_resource type="Script" path="res://Code/Actions/end_teleport.gd" id="1_0y3lp"]
+[ext_resource type="Texture2D" uid="uid://bcxkbyimvvrba" path="res://Textures/UI/GUI.png" id="2_3033h"]
+[ext_resource type="PackedScene" uid="uid://bio2yqlrq5os7" path="res://Scenes/UI/Button_icons/y.tscn" id="2_fk480"]
+[ext_resource type="Material" uid="uid://bq4hbmirfu1sl" path="res://Data/UI/button_material/unshaded.tres" id="2_m40vc"]
+[ext_resource type="Theme" uid="uid://c53yfdo2731ry" path="res://Data/UI/Themes/button_theme.tres" id="4_ao8qt"]
+
+[node name="EndTeleport" type="Node2D"]
+script = ExtResource("1_0y3lp")
+
+[node name="panel" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("2_m40vc")
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 35.0
+offset_bottom = -27.0
+texture = ExtResource("2_3033h")
+region_rect = Rect2(81, 97, 30, 30)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="y" parent="panel" instance=ExtResource("2_fk480")]
+material = ExtResource("2_m40vc")
+position = Vector2(11, 6)
+scale = Vector2(0.6, 0.6)
+
+[node name="teleport_label" type="Label" parent="panel"]
+material = ExtResource("2_m40vc")
+layout_mode = 0
+offset_left = 16.0
+offset_top = 3.0
+offset_right = 61.0
+offset_bottom = 10.0
+theme = ExtResource("4_ao8qt")
+text = "Exit Dungeon"

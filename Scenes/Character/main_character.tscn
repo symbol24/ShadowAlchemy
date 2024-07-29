@@ -1,10 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://xi5m14bnt4mo"]
+[gd_scene load_steps=53 format=3 uid="uid://xi5m14bnt4mo"]
 
 [ext_resource type="Script" path="res://Code/Utilities/hit_detection.gd" id="2_c0kea"]
 [ext_resource type="Script" path="res://Code/Character/s_a_main_character.gd" id="2_lm4qm"]
 [ext_resource type="Texture2D" uid="uid://b4anfu70pmfvo" path="res://Textures/AssetPack/Light/idle.png" id="3_3i1q3"]
 [ext_resource type="Resource" uid="uid://cjwfhv4acdubq" path="res://Data/Characters/main_character.tres" id="3_od2nr"]
 [ext_resource type="Texture2D" uid="uid://ba7dh1uaovvde" path="res://Textures/AssetPack/Light/idle_blink/idle_blink2.png" id="3_rsxsx"]
+[ext_resource type="PackedScene" uid="uid://cre3gmcvj5dak" path="res://Scenes/Actions/end_teleport.tscn" id="4_u6iul"]
 [ext_resource type="Resource" uid="uid://bh1l1kqudv7wf" path="res://Data/Potions/heal_potion.tres" id="6_ggixb"]
 [ext_resource type="PackedScene" uid="uid://c58mpbqmx0766" path="res://Scenes/Actions/move.tscn" id="6_nl1t7"]
 [ext_resource type="PackedScene" uid="uid://v55mj1pxbia6" path="res://Scenes/Actions/jump.tscn" id="7_0t0bg"]
@@ -260,6 +261,8 @@ texture = ExtResource("3_3i1q3")
 visible = false
 position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_nsi66")
+
+[node name="EndTeleport" parent="." instance=ExtResource("4_u6iul")]
 
 [node name="Move" parent="." instance=ExtResource("6_nl1t7")]
 

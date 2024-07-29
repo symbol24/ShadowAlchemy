@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dowjo6p4hb3xe"]
+[gd_scene load_steps=7 format=3 uid="uid://dowjo6p4hb3xe"]
 
 [ext_resource type="Script" path="res://Code/Worlds/main_world.gd" id="1_iy262"]
 [ext_resource type="Resource" uid="uid://bitssmt3qsyts" path="res://Data/Worlds/test.tres" id="2_4khvi"]
 [ext_resource type="PackedScene" uid="uid://bb4r86jso6ntg" path="res://Scenes/Utilities/s_a_camera.tscn" id="3_6igvn"]
 [ext_resource type="PackedScene" uid="uid://3l5237royb1l" path="res://Scenes/Utilities/darkener.tscn" id="3_ntm3d"]
 [ext_resource type="PackedScene" uid="uid://tcak6exihy05" path="res://Scenes/Worlds/Rooms/room_test.tscn" id="5_k16tk"]
+[ext_resource type="PackedScene" uid="uid://br0d8bot43lss" path="res://Scenes/Worlds/Rooms/room_30_stone.tscn" id="6_0d270"]
 
 [node name="WorldTest" type="Node2D"]
 script = ExtResource("1_iy262")
@@ -19,3 +20,6 @@ color = Color(0.0196078, 0.0196078, 0.0431373, 1)
 position = Vector2(160, 88)
 
 [node name="room_test" parent="." instance=ExtResource("5_k16tk")]
+
+[node name="room30_stone" parent="." instance=ExtResource("6_0d270")]
+position = Vector2(320, 0)
