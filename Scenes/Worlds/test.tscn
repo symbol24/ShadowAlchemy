@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://burt8ytxhfm5t"]
+[gd_scene load_steps=37 format=3 uid="uid://burt8ytxhfm5t"]
 
 [ext_resource type="TileSet" uid="uid://bus3xfghoqlq2" path="res://Data/Tilesets/dungeon.tres" id="1_b32wh"]
 [ext_resource type="Script" path="res://Code/Utilities/TilemapCollisionBaker.gd" id="1_swrk1"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://bitssmt3qsyts" path="res://Data/Worlds/test.tres" id="2_k8if4"]
 [ext_resource type="PackedScene" uid="uid://xi5m14bnt4mo" path="res://Scenes/Character/main_character.tscn" id="3_fjv27"]
 [ext_resource type="PackedScene" uid="uid://bb4r86jso6ntg" path="res://Scenes/Utilities/s_a_camera.tscn" id="5_oawm8"]
-[ext_resource type="Texture2D" uid="uid://bt2bti6naf0to" path="res://Textures/black_sprite.png" id="6_t04ti"]
 [ext_resource type="PackedScene" uid="uid://bbxp0o51k320k" path="res://Scenes/Pickups/pickup_potion_air.tscn" id="7_yhs58"]
 [ext_resource type="PackedScene" uid="uid://dkd0odd3mt3cx" path="res://Scenes/Pickups/pickup_potion_dark.tscn" id="8_22c8h"]
 [ext_resource type="PackedScene" uid="uid://idnrc0bl52j1" path="res://Scenes/Pickups/pickup_potion_earth.tscn" id="9_mnin7"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cwgap76bh66px" path="res://Scenes/Pickups/pickup_potion_water.tscn" id="11_mw7di"]
 [ext_resource type="PackedScene" uid="uid://cyvhx1bkfy7bt" path="res://Scenes/Worlds/background_items/merky_light.tscn" id="12_khkrp"]
 [ext_resource type="PackedScene" uid="uid://dpigygnk80amd" path="res://Scenes/Pickups/stone_pickup.tscn" id="13_gfd0r"]
+[ext_resource type="PackedScene" uid="uid://kcprrkt1mpx4" path="res://Scenes/Enemies/skeleton_mage.tscn" id="14_hvfv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8ch4"]
 size = Vector2(64, 112)
@@ -80,8 +80,6 @@ size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc06g"]
 size = Vector2(48, 16)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dq1jc"]
 
 [node name="Node2D" type="Node2D" groups=["world"]]
 script = ExtResource("1_w6euf")
@@ -212,14 +210,6 @@ position = Vector2(212, 256)
 
 [node name="SACamera" parent="." instance=ExtResource("5_oawm8")]
 
-[node name="darkner" type="Sprite2D" parent="SACamera"]
-visible = false
-modulate = Color(1, 1, 1, 0.823529)
-z_index = 99
-material = SubResource("CanvasItemMaterial_dq1jc")
-scale = Vector2(6.74, 3.66)
-texture = ExtResource("6_t04ti")
-
 [node name="Pickup" parent="." instance=ExtResource("7_yhs58")]
 position = Vector2(569, 237)
 
@@ -237,3 +227,6 @@ position = Vector2(691, 238)
 
 [node name="StonePickup" parent="." instance=ExtResource("13_gfd0r")]
 position = Vector2(340, 233)
+
+[node name="SkeletonMage" parent="." instance=ExtResource("14_hvfv0")]
+position = Vector2(438, 255)

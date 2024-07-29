@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_0bvs4")
 id = "test"
-scene_path = "res://Scenes/Worlds/test.tscn"
+scene_path = "res://Scenes/Worlds/world_test.tscn"
 display_player_ui = true
+spawn_character = true

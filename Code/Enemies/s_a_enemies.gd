@@ -14,13 +14,27 @@ func _ready():
 func _process(_delta):
 	if !target and GameMode.character: target = GameMode.character
 
+func _physics_process(_delta):
+	if GameMode.is_playing():
+		grounded = is_on_floor()
+		if !grounded: _apply_gravity(_delta)
+		
+		move_and_slide()
+		
+		var look_dir := 1.0
+		if target: look_dir = global_position.direction_to(target.global_position).x
+		
+		_flip_items(look_dir, to_flip)
+		_direction_check(direction)
+		_state_check_for_animation(current_state)
+
 func character_dead():
 	queue_free.call_deferred()
 
 func _trigger_attack(_enemy:SAEnemy):
 	if _enemy == self:
-		_update_state(name, STATE.ATTACKING)
-		_update_animation(name, "attack")
+		_update_state(self, STATE.ATTACKING)
+		_update_animation(self, "attack")
 		
 func get_distance_to_target(_target:SAMainCharacter = null) -> float:
 	if _target:

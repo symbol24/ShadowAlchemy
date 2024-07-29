@@ -12,4 +12,4 @@ func shoot():
 		_flip_items(target_direction, to_flip)
 	elif !sprite.flip_h and target_direction < 0.0:
 		_flip_items(target_direction, to_flip)
-	SASignals.MageShoot.emit(name)
+	SASignals.MageShoot.emit(self)

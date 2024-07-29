@@ -13,8 +13,9 @@ func _ready():
 	SASignals.MageShoot.connect(_shoot)
 
 func _physics_process(_delta):
-	if GameMode.is_playing() and SAOwner and SAOwner.target:
+	if GameMode.is_playing() and SAOwner and SAOwner.target and GameMode.world and GameMode.world.get_active_room() == SAOwner.room_in and !SAOwner.is_dead():
 		if !attacking and SAOwner.get_distance_to_target(SAOwner.target) <= SAOwner.data.attack_distance:
+			#print("GameMode.world.get_active_room() ", GameMode.world.get_active_room(), "==", " SAOwner.room_in", SAOwner.room_in)
 			attacking = true
 			SASignals.EnemyAttack.emit(SAOwner)
 			attack_delay.start()
@@ -22,8 +23,8 @@ func _physics_process(_delta):
 func _reset_attack(_enemy:SAEnemy):
 	if _enemy == SAOwner and attacking: attacking = false
 
-func _shoot(_enemy:=""):
-	if _enemy == SAOwner.name:
+func _shoot(_enemy:SAEnemy):
+	if _enemy == SAOwner:
 		var new_proj = PROJECTILE.instantiate()
 		var direction = global_position.direction_to(SAOwner.target.global_position)
 		new_proj.direction = direction.x

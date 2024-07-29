@@ -27,7 +27,7 @@ var grounded := true:
 var direction := 0.0:
 	set(_value):
 		direction = _value
-		if GameMode.is_playing() and grounded and direction != 0.0: _update_state(name, STATE.WALKING)
+		if GameMode.is_playing() and grounded and direction != 0.0: _update_state(self, STATE.WALKING)
 var to_flip := []
 
 var pre_animation := ""
@@ -65,21 +65,21 @@ func _physics_process(_delta):
 func _direction_check(_direction := 0.0):
 	if _direction < 0.1 and _direction > -0.1:
 		if current_state == STATE.WALKING:
-			_update_state(name, STATE.IDLE)
+			_update_state(self, STATE.IDLE)
 	elif _direction > 0.1 and _direction < -0.1:
 		if current_state == STATE.IDLE:
-			_update_state(name, STATE.WALKING)
+			_update_state(self, STATE.WALKING)
 
 func _state_check_for_animation(_state := STATE.IDLE):
 	match _state:
 		STATE.IDLE:
-			_update_animation(name, "idle")
+			_update_animation(self, "idle")
 		STATE.WALKING:
-			_update_animation(name, "walk")
+			_update_animation(self, "walk")
 		STATE.JUMPING:
-			_update_animation(name, "jump")
+			_update_animation(self, "jump")
 		STATE.FALLING:
-			_update_animation(name, "fall")
+			_update_animation(self, "fall")
 
 func _apply_gravity(_delta := 0.0):
 	velocity.y += get_gravity() * _delta
@@ -103,19 +103,19 @@ func get_fall_gravity() -> float:
 	return maxf(((2.0 * height) / (JUMP_TIME_TO_DESCENT * JUMP_TIME_TO_DESCENT)), MAX_FALL_VELOCITY)
 
 func _flip_items(_direction := 1.0, _items := []):
-	if (direction > 0 and sprite.flip_h) or (direction < 0 and !sprite.flip_h):
+	if (_direction > 0 and sprite.flip_h) or (_direction < 0 and !sprite.flip_h):
 		for each in _items:
 			if each.position.x != 0:
 				each.position.x = -each.position.x
 			if each is Sprite2D:
 				each.flip_h = !each.flip_h
 
-func _update_state(_name := "", _new_state := STATE.IDLE):
+func _update_state(_char :SACharacterBody2D, _new_state := STATE.IDLE):
 	#print(name, " is _name == name: ", _name == name)
-	if _name == name and current_state != _new_state: current_state = _new_state
+	if _char == self and current_state != _new_state: current_state = _new_state
 
-func _update_animation(_name := "", _new_anim := ""):
-	if _name == name and animator.current_animation != _new_anim:
+func _update_animation(_char :SACharacterBody2D, _new_anim := ""):
+	if _char == self and animator.current_animation != _new_anim:
 		if pre_animation != "death":
 			pre_animation = animator.current_animation
 			#print("NEW ANIMATION: ", _new_anim)
@@ -127,8 +127,8 @@ func is_dead():
 func _death(_data):
 	if _data == data:
 		print("in death func")
-		_update_state(name, STATE.DEAD)
-		_update_animation(name, "death")
+		_update_state(self, STATE.DEAD)
+		_update_animation(self, "death")
 
 func character_dead():
 	pass

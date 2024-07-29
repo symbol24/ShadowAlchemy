@@ -248,6 +248,7 @@ _data = {
 collision_layer = 2
 platform_floor_layers = 4294901761
 script = ExtResource("2_lm4qm")
+god_mode = true
 character_data = ExtResource("3_od2nr")
 
 [node name="sprite" type="Sprite2D" parent="." groups=["to_flip"]]
