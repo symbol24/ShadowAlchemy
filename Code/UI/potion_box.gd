@@ -8,12 +8,16 @@ var data:PotionData
 
 func _ready():
 	SASignals.PotionTimerUpdate.connect(_update_cooldown)
+	print("potion box should be ready")
+	print("selector is ", selector)
 
 func remove_selection():
-	selector.hide()
+	if selector:
+		selector.hide()
 
 func display_selection():
-	selector.show()
+	if selector:
+		selector.show()
 
 func set_icon():
 	if data:

@@ -20,6 +20,9 @@ var load_complete := false
 var loading_status := 0.0
 var progress := []
 var ui_ready := false
+var extra_loading := false
+var loading_timer := 0.0
+var loading_delay := 5.0
 
 #spawning
 var character:SAMainCharacter = null
@@ -44,6 +47,21 @@ func _process(_delta):
 					load_complete = true
 					print("loading complete of ", loading)
 					_complete_load()
+	
+	if extra_loading:
+		loading_timer += _delta
+		#print("loading timer ", loading_timer)
+		if loading_timer >= loading_delay:
+			extra_loading = false
+			loading_timer = 0.0
+			_display_game()
+
+func _display_game():
+	#print("in display game")
+	SASignals.ToggleLoading.emit(false)
+	SASignals.FocusedOnUi.emit(false)
+	_toggle_pause(false)
+	SASignals.PotionSelectionChanged.emit(0)
 
 func _complete_load():
 	is_loading = false
@@ -55,14 +73,16 @@ func _complete_load():
 	if get_tree().paused: get_tree().paused = false
 	add_child(world)
 	load_complete = false
+	extra_loading = true
+	print("extra loading true")
 
 func is_playing() -> bool:
 	return playing
 
 func _load_world(_id := ""):
-	print("attempting to load ", _id)
+	#print("attempting to load ", _id)
 	loading = _get_world(_id)
-	print("found ", loading)
+	#print("found ", loading)
 	if loading:
 		ResourceLoader.load_threaded_request(loading)
 		is_loading = true
@@ -118,13 +138,10 @@ func _spawn_character(_world:SAWorld):
 			var new_character = MAIN_CHARACTER.instantiate()
 			new_character.global_position = temp.global_position
 			_world.add_child(new_character)
+			#print("character spawned")
 	
 func _receive_ui_done(_value := false):
 	ui_ready = _value
-	if ui_ready and character:
-		SASignals.ToggleLoading.emit(false)
-		SASignals.FocusedOnUi.emit(false)
-		_toggle_pause(false)
 
 func _set_camera_pos(_pos := Vector2.ZERO):
 	if camera: camera.global_position = _pos
