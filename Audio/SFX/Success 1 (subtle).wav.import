@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7sj7qrjsvtgp"
+path="res://.godot/imported/Success 1 (subtle).wav-810c53b64fe081c32337457571ca32a1.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Success 1 (subtle).wav"
+dest_files=["res://.godot/imported/Success 1 (subtle).wav-810c53b64fe081c32337457571ca32a1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

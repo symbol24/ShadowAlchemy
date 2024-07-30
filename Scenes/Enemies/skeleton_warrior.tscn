@@ -196,7 +196,7 @@ _data = {
 radius = 7.0
 height = 20.0
 
-[node name="SkeletonWarrior" type="CharacterBody2D"]
+[node name="SkeletonWarrior" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 16
 script = ExtResource("1_ogmb1")
 character_data = ExtResource("2_gwp3w")

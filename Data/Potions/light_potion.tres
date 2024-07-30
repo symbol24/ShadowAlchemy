@@ -11,6 +11,6 @@ particle_path = "res://Scenes/FX/Particles/particle_light.tscn"
 particle_count = 2
 element = 0
 hit_fx_path = ""
-throw_delay = 5.0
+throw_delay = 3.0
 potion_icon = ExtResource("1_r820d")
 popup_text = "potion_light_pickup"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://0cgemxd3k5vl"]
+
+[ext_resource type="AudioStream" uid="uid://d233hfincba5d" path="res://Audio/SFX/GLASCrsh_explo_debris_glass_crunch_small_01.wav" id="1_fnf4a"]
+[ext_resource type="Script" path="res://Code/Utilities/audio_file.gd" id="1_jp1vf"]
+
+[resource]
+script = ExtResource("1_jp1vf")
+files = Array[AudioStream]([ExtResource("1_fnf4a")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="HitFxData" load_steps=3 format=3 uid="uid://b4l814ua65l41"]
+[gd_resource type="Resource" script_class="HitFxData" load_steps=4 format=3 uid="uid://b4l814ua65l41"]
 
+[ext_resource type="Resource" uid="uid://bwjh861js30ox" path="res://Data/Audio/Files/potion_air_hit_fx.tres" id="1_oc52r"]
 [ext_resource type="Resource" uid="uid://co52sstrnt6tn" path="res://Data/Potions/Particles/Damages/air_damage.tres" id="1_t2xly"]
 [ext_resource type="Script" path="res://Code/FX/sa_potion_hit_fx_data.gd" id="2_odskn"]
 
@@ -7,3 +8,4 @@
 script = ExtResource("2_odskn")
 id = "fire_potion"
 damages = Array[Resource("res://Code/Utilities/damage.gd")]([ExtResource("1_t2xly")])
+audio_file = ExtResource("1_oc52r")

@@ -1,5 +1,7 @@
 class_name MainWorld extends SAWorld
 
+const MAIN_WORLD_MUSIC = preload("res://Data/Audio/Files/main_world_music.tres")
+
 @onready var darkener = %darkener
 
 var rooms := []
@@ -14,6 +16,7 @@ func _ready():
 	_set_active_room(rooms[0])
 	spawn_point = _get_spawn_point(rooms)
 	await get_tree().create_timer(2).timeout
+	Audio.play(MAIN_WORLD_MUSIC)
 	super._ready()
 
 func _get_spawn_point(_rooms = []):

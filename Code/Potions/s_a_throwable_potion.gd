@@ -1,5 +1,7 @@
 class_name SAThrowablePotion extends RigidBody2D
 
+const POTION_BREAK = preload("res://Data/Audio/Files/potion_break.tres")
+
 @export var data:PotionData
 
 @onready var hit_detection:Area2D = %hit_detection
@@ -22,6 +24,7 @@ func _collision_detection(_area):
 func break_potion():
 	if !break_once:
 		break_once = true
+		Audio.play(POTION_BREAK)
 		spawn_hit_fx(data.hit_fx_path)
 		spawn_particles(data.particle_path, data.particle_count)
 		queue_free.call_deferred()

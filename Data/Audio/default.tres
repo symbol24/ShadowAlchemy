@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AudioData" load_steps=2 format=3 uid="uid://hqjt0q807s03"]
+
+[ext_resource type="Script" path="res://Code/Utilities/audio_data.gd" id="1_fukes"]
+
+[resource]
+script = ExtResource("1_fukes")
+master_volume = 1.0
+music_volume = 1.0
+sfx_volume = 1.0

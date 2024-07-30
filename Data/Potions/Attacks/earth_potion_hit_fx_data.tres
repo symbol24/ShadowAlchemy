@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="HitFxData" load_steps=3 format=3 uid="uid://c7rmjd21o1xvb"]
+[gd_resource type="Resource" script_class="HitFxData" load_steps=4 format=3 uid="uid://c7rmjd21o1xvb"]
 
 [ext_resource type="Resource" uid="uid://bdbrc0sjyh5b6" path="res://Data/Potions/Particles/Damages/earth_damage.tres" id="1_8bl63"]
+[ext_resource type="Resource" uid="uid://btpuku5c6bdfn" path="res://Data/Audio/Files/potion_earth_hit_fx.tres" id="1_jgg4a"]
 [ext_resource type="Script" path="res://Code/FX/sa_potion_hit_fx_data.gd" id="2_fxkdv"]
 
 [resource]
 script = ExtResource("2_fxkdv")
 id = "fire_potion"
 damages = Array[Resource("res://Code/Utilities/damage.gd")]([ExtResource("1_8bl63")])
+audio_file = ExtResource("1_jgg4a")

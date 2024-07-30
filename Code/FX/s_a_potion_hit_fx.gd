@@ -4,7 +4,9 @@ class_name SAPotionHitFX extends Area2D
 
 @onready var animator:AnimationPlayer = %animator
 
-#func _ready():
+func _ready():
+	if data.audio_file:
+		Audio.play(data.audio_file)
 	#print("hit_fx in ready: ", global_position)
 
 func get_damages() -> Array[Damage]:

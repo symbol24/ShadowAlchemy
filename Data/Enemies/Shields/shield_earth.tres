@@ -6,4 +6,4 @@
 script = ExtResource("1_f6c4m")
 hp = 1.0
 element = 4
-color_modulation = Color(0.350053, 0.304997, 0.146914, 1)
+color_modulation = Color(0.172549, 0.847059, 0.454902, 1)

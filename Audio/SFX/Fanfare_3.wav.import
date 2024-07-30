@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://brbaaxprpbyoe"
-path="res://.godot/imported/Fanfare_3.wav-224513e1d774d6fce6b8431a1caf7437.sample"
+uid="uid://c8du5ude2eioy"
+path="res://.godot/imported/Fanfare_3.wav-db0056cc657f84ca2fc6339e508ede83.sample"
 
 [deps]
 
-source_file="res://Audio/Music/Fanfare_3.wav"
-dest_files=["res://.godot/imported/Fanfare_3.wav-224513e1d774d6fce6b8431a1caf7437.sample"]
+source_file="res://Audio/SFX/Fanfare_3.wav"
+dest_files=["res://.godot/imported/Fanfare_3.wav-db0056cc657f84ca2fc6339e508ede83.sample"]
 
 [params]
 

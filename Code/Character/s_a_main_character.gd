@@ -42,3 +42,9 @@ func _heal(_character:SACharacterBody2D, _value := 0.0):
 		heal.position = Vector2.ZERO
 		add_child(heal)
 		data.update_hp(data.max_hp * _value)
+
+func get_aim_direction() -> Vector2:
+	var dir := Vector2.RIGHT
+	if sprite.flip_h:
+		dir = Vector2.LEFT
+	return dir

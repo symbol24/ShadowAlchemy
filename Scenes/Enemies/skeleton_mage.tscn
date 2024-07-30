@@ -205,7 +205,7 @@ _data = {
 "walk": SubResource("Animation_d6sff")
 }
 
-[node name="SkeletonMage" type="CharacterBody2D"]
+[node name="SkeletonMage" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 16
 script = ExtResource("1_50iop")
 character_data = ExtResource("2_xa344")

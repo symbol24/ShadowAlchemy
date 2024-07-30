@@ -119,7 +119,7 @@ position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_oraem")
 
 [node name="Pickup_potion_water" parent="." instance=ExtResource("5_lbqus")]
-position = Vector2(274, 89)
+position = Vector2(274, 97)
 
 [node name="SkeletonWarrior" parent="." instance=ExtResource("6_n6kc2")]
 position = Vector2(160, 144)

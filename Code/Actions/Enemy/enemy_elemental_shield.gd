@@ -15,6 +15,7 @@ var hp := 1.0
 
 func _ready():
 	super._ready()
+	shield_element = SAOwner.shield_element
 	shield_data = set_data(shield_element, SHIELDDATAS)
 	hp = shield_data.hp
 	sprite.set_modulate(shield_data.color_modulation)

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://btpuku5c6bdfn"]
+
+[ext_resource type="AudioStream" uid="uid://biwpnci2ndbfo" path="res://Audio/SFX/Rock Wall 1.ogg" id="1_2wwwh"]
+[ext_resource type="Script" path="res://Code/Utilities/audio_file.gd" id="2_aea1k"]
+
+[resource]
+script = ExtResource("2_aea1k")
+files = Array[AudioStream]([ExtResource("1_2wwwh")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false

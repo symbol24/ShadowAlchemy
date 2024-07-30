@@ -1,6 +1,7 @@
 extends SAEnemyAction
 
 const PROJECTILE = preload("res://Scenes/FX/skeleton_mage_projectile.tscn")
+const SKELETON_MAGE_ATTACK = preload("res://Data/Audio/Files/skeleton_mage_attack.tres")
 
 @onready var attack_delay:Timer = %attack_delay
 
@@ -32,6 +33,7 @@ func _shoot(_enemy:SAEnemy):
 			new_proj.flip()
 		new_proj.global_position = SAOwner.projectile_point.global_position
 		GameMode.world.add_child.call_deferred(new_proj)
+		Audio.play(SKELETON_MAGE_ATTACK)
 
 func _timer_timeout():
 	attacking = false

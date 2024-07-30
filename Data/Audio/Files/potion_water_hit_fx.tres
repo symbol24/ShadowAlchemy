@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://dcny8it6nuna2"]
+
+[ext_resource type="AudioStream" uid="uid://dsfc3xtb4b2gt" path="res://Audio/SFX/Waterspray 2.ogg" id="1_jh7jg"]
+[ext_resource type="Script" path="res://Code/Utilities/audio_file.gd" id="2_e241x"]
+
+[resource]
+script = ExtResource("2_e241x")
+files = Array[AudioStream]([ExtResource("1_jh7jg")])
+volume_db = -15.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false

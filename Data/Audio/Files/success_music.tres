@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://cyydlm0vcjq2j"]
+
+[ext_resource type="AudioStream" uid="uid://c4frn7ekv0fys" path="res://Audio/Music/Track_#6.wav" id="1_sdmuk"]
+[ext_resource type="Script" path="res://Code/Utilities/audio_file.gd" id="1_sujhw"]
+
+[resource]
+script = ExtResource("1_sujhw")
+files = Array[AudioStream]([ExtResource("1_sdmuk")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = true

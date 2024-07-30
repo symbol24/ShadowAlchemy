@@ -16,6 +16,7 @@
 [ext_resource type="Theme" uid="uid://dimwmh806vo21" path="res://Data/UI/Themes/credits_back_label.tres" id="12_ovhd7"]
 
 [node name="MainMenu" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_msyxd")
 data = ExtResource("2_h4tyq")
 
@@ -115,6 +116,7 @@ offset_bottom = 180.0
 
 [node name="scroll" type="ScrollContainer" parent="Credits"]
 unique_name_in_owner = true
+process_mode = 3
 custom_minimum_size = Vector2(280, 155)
 layout_mode = 0
 offset_left = 20.0
@@ -311,21 +313,20 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_eysxd")
-text = "Symbol24"
+text = "Shononoki"
 horizontal_alignment = 1
 
 [node name="name3" type="Label" parent="Credits/scroll/vbox/grid_music"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_eysxd")
-text = "Symbol24"
+text = "Of Far Different Nature"
 horizontal_alignment = 1
 
 [node name="name4" type="Label" parent="Credits/scroll/vbox/grid_music"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_eysxd")
-text = "Symbol24"
 horizontal_alignment = 1
 
 [node name="Control2" type="Control" parent="Credits/scroll/vbox/grid_music"]
@@ -354,24 +355,51 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_eysxd")
-text = "Symbol24"
+text = "KROTOS LTD"
 horizontal_alignment = 1
 
 [node name="name3" type="Label" parent="Credits/scroll/vbox/grid_sfx"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_eysxd")
-text = "Symbol24"
+text = "DHSFX"
 horizontal_alignment = 1
 
 [node name="name4" type="Label" parent="Credits/scroll/vbox/grid_sfx"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("10_eysxd")
-text = "Symbol24"
+text = "Atelier Magicae"
 horizontal_alignment = 1
 
 [node name="Control2" type="Control" parent="Credits/scroll/vbox/grid_sfx"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="Credits/scroll/vbox/grid_sfx"]
+custom_minimum_size = Vector2(20, 5)
+layout_mode = 2
+
+[node name="name5" type="Label" parent="Credits/scroll/vbox/grid_sfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+text = "ivyism"
+horizontal_alignment = 1
+
+[node name="name6" type="Label" parent="Credits/scroll/vbox/grid_sfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+horizontal_alignment = 1
+
+[node name="name7" type="Label" parent="Credits/scroll/vbox/grid_sfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_eysxd")
+horizontal_alignment = 1
+
+[node name="Control4" type="Control" parent="Credits/scroll/vbox/grid_sfx"]
 custom_minimum_size = Vector2(20, 5)
 layout_mode = 2
 

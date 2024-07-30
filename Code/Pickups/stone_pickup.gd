@@ -1,5 +1,7 @@
 extends SAInteractible
 
+const SUCCESS = preload("res://Data/Audio/Files/success.tres")
+
 @export var action := GameMode.BUTTON.ACTION3
 
 @onready var sprite:Sprite2D = %sprite
@@ -14,6 +16,7 @@ func _ready():
 func interact():
 	y.hide()
 	SASignals.AddStone.emit()
+	Audio.play(SUCCESS)
 	SASignals.DisplaySmallPopup.emit(text)
 	animator.play("pickup")
 

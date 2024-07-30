@@ -1,5 +1,7 @@
 class_name GameOverScreen extends Control
 
+const SUCCESS_MUSIC = preload("res://Data/Audio/Files/success_music.tres")
+const GAME_OVER = preload("res://Data/Audio/Files/game_over.tres")
 const DEAD = preload("res://Textures/AssetPack/Light/transform/transform9.png")
 const STONE = preload("res://Textures/minerals/Icon16.png")
 
@@ -38,10 +40,12 @@ func _display_game_over(_result := ""):
 		game_over_title.text = dead_title
 		game_over_text.text = dead_text
 		dead_sprite.show()
+		Audio.play(GAME_OVER)
 	elif _result == "succes":
 		game_over_title.text = succes_title
 		game_over_text.text = succes_text
 		succes_sprite.show()
+		Audio.play(SUCCESS_MUSIC)
 	if _result: 
 		SASignals.FocusedOnUi.emit(true)
 		show()

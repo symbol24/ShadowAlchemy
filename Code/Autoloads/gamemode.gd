@@ -45,7 +45,7 @@ func _process(_delta):
 			if loading_status == ResourceLoader.THREAD_LOAD_LOADED:
 				if !load_complete:
 					load_complete = true
-					print("loading complete of ", loading)
+					#print("loading complete of ", loading)
 					_complete_load()
 	
 	if extra_loading:
@@ -73,15 +73,18 @@ func _complete_load():
 	if get_tree().paused: get_tree().paused = false
 	add_child(world)
 	load_complete = false
-	extra_loading = true
-	print("extra loading true")
+	if world.data.spawn_character:
+		extra_loading = true
+		print("extra loading true")
+	else: _display_game()
 
 func is_playing() -> bool:
 	return playing
 
 func _load_world(_id := ""):
 	#print("attempting to load ", _id)
-	loading = _get_world(_id)
+	var data_to_load:SAWorldData = _get_world(_id)
+	loading = data_to_load.scene_path
 	#print("found ", loading)
 	if loading:
 		ResourceLoader.load_threaded_request(loading)
@@ -89,14 +92,14 @@ func _load_world(_id := ""):
 
 func _get_world(_id := ""):
 	var found := false
-	var _path := ""
+	var _data:SAWorldData
 	for data in WORLDS:
 		if data.id == _id:
-			_path = data.scene_path
+			_data = data
 			found = true
 			break
 	if found:
-		return _path
+		return _data
 	printerr("World ", _id, " not found")
 	return ""
 
@@ -142,6 +145,7 @@ func _spawn_character(_world:SAWorld):
 	
 func _receive_ui_done(_value := false):
 	ui_ready = _value
+	extra_loading = true
 
 func _set_camera_pos(_pos := Vector2.ZERO):
 	if camera: camera.global_position = _pos

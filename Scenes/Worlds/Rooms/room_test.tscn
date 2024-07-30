@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://tcak6exihy05"]
+[gd_scene load_steps=10 format=3 uid="uid://tcak6exihy05"]
 
 [ext_resource type="Script" path="res://Code/Worlds/rooms.gd" id="1_ey3tq"]
 [ext_resource type="Script" path="res://Code/Utilities/TilemapCollisionBaker.gd" id="2_jny31"]
 [ext_resource type="TileSet" uid="uid://bus3xfghoqlq2" path="res://Data/Tilesets/dungeon.tres" id="3_kwk5l"]
 [ext_resource type="PackedScene" uid="uid://cyvhx1bkfy7bt" path="res://Scenes/Worlds/background_items/merky_light.tscn" id="4_35wch"]
+[ext_resource type="PackedScene" uid="uid://beyeh677ydtfh" path="res://Scenes/Enemies/skeleton_warrior.tscn" id="9_melbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox51k"]
 size = Vector2(32, 112)
@@ -63,3 +64,7 @@ position = Vector2(84, 87)
 
 [node name="MerkyLight2" parent="." instance=ExtResource("4_35wch")]
 position = Vector2(228, 87)
+
+[node name="SkeletonWarrior" parent="." instance=ExtResource("9_melbq")]
+position = Vector2(202, 144)
+shield_element = 5

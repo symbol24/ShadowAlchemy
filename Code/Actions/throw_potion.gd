@@ -29,7 +29,7 @@ func _ready():
 
 func _potion_setup(_character:SACharacterBody2D):
 	if _character == SAOwner:
-		SASignals.SendHowanyStarterPotions.emit(STARTERS.size())
+		SASignals.SendHowManyStarterPotions.emit(STARTERS.size())
 		for data in STARTERS:
 			SASignals.AddPotion.emit(data)
 
@@ -43,8 +43,8 @@ func _process(_delta):
 			aim_line.hide()
 		if aim_direction != Vector2.ZERO and SAInput.action_7:
 			_throw(aim_direction.normalized(), potions[selection])
-		elif aim_direction == Vector2.ZERO and SAInput.action_7 and potions[selection]["data"].element == GameMode.ELEMENT.HEAL:
-			_throw(aim_direction.normalized(), potions[selection])
+		elif aim_direction == Vector2.ZERO and SAInput.action_7:
+			_throw(SAOwner.get_aim_direction(), potions[selection])
 		
 		if SAInput.action_5 and !toggle_pressed: 
 			toggle_pressed = true

@@ -16,7 +16,7 @@ var starter_count := 0
 var setup := true
 
 func _ready():
-	SASignals.SendHowanyStarterPotions.connect(_set_starter_count)
+	SASignals.SendHowManyStarterPotions.connect(_set_starter_count)
 	SASignals.AddPotion.connect(_add_potion)
 	SASignals.PotionSelectionChanged.connect(_update_selection)
 	display_timer.timeout.connect(_timer_timeout)

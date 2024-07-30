@@ -1,5 +1,7 @@
 class_name SAPickup extends SAInteractible
 
+const POTION_PICKUP = preload("res://Data/Audio/Files/potion_pickup.tres")
+
 @export var potion_data:PotionData
 
 @onready var sprite:Sprite2D = %sprite
@@ -15,6 +17,7 @@ func interact():
 	SASignals.DisplaySmallPopup.emit(potion_data.popup_text)
 	SASignals.AddPotion.emit(potion_data)
 	animator.play("pickup/pickup")
+	Audio.play(POTION_PICKUP)
 
 func _area_entered(_area):
 	if !y.visible:
